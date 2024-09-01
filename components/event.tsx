@@ -1,0 +1,64 @@
+import Image from "next/image";
+import poster from "@/public/poster.jpeg";
+
+const Programme = [
+  {
+    id: 1,
+    composer: "James Barnes",
+    piece: "Alvamar Overture"
+  },
+  {
+    id: 2,
+    composer: "Itaru Sakai",
+    piece: "The Seventh Night of July"
+  },
+  {
+    id: 3,
+    composer: "George Gershwin / arr. Ferde Grofé",
+    piece: "Rhapsody in Blue"
+  }
+]
+
+export default function Event() {
+  return (
+    <div className="flex justify-between items-center">
+      <Image src={poster} alt="conducter" className="w-1/3 shadow-2xl shadow-black hover:scale-[1.02] duration-500 transition-all"/>
+      <div className="flex flex-col space-y-4 w-1/2 text-slate-700 text-left">
+        <div className="w-full px-10 h-2 bg-red-800"/>
+        <div className="text-6xl font-serif">
+          The First Note
+        </div>
+        <div className="text-xl w-fit text-slate-700">
+          <div className="w-full px-10 h-1 mb-4 bg-red-800"/>
+          1st March 2024 | 7:30 PM
+        </div>
+        <div className="text-xl w-fit text-slate-700">
+          <div className="w-full px-10 h-1 mb-4 bg-red-800"/>
+          Lee Hysan Concert Hall | $200 per ticket | Free Seating
+        </div>
+        <div className="w-full px-10 h-2 bg-red-800"/>
+        <div className="flex flex-col space-y-4 text-lg text-justify">
+          <div className="flex flex-col space-y-4">
+            <div className="font-bold text-xl">
+              Programme Highlights
+            </div>
+            <div className="flex flex-col space-y-2">
+              {Programme.map((item) => (
+                <div key={item.id} className="flex space-x-2 items-center">
+                  <div className="font-bold">{item.composer}</div>
+                  <div>|</div>
+                  <div>{item.piece}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="opacity-80">
+            與此同時，梁氏在香港及英國深造期間分別跟隨白榮輝先生與羅保莙女士，及Mr. Mark Heron 學習管樂團及管弦樂團指揮。
+            自 2016 年起擔任聖若瑟英文中學管樂團及2022年起擔任香港世紀管樂團助理指揮，並在2024年起擔任基督教宣道會宣基中學管樂團指揮一職。
+          </div>
+        </div>
+        <div className="w-full px-10 h-2 bg-red-800"/>
+      </div>
+    </div>
+  );
+}
