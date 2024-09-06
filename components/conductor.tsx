@@ -4,13 +4,13 @@ import conductor from "@/public/conductor.jpg";
 export default function Conductor() {
   return (
       <div className="flex justify-between items-center">
-        <div className="flex flex-col space-y-4 w-1/2 text-slate-700 text-left">
+        <div className="flex flex-col space-y-4 lg:w-1/2 text-slate-700 text-left">
           <div className="w-full px-10 h-2 bg-red-800"/>
-          <div className="text-4xl text-slate-700">
+          <div className="text-3xl text-slate-700">
             首席指揮
           </div>
           <div className="flex flex-col">
-            <div className="w-fit text-6xl">
+            <div className="w-fit font-serif text-6xl">
               <div className="w-full px-10 h-1 mb-4 bg-red-800"/>
               梁境佑 先生
             </div>

@@ -6,10 +6,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Noto Sans JP"],
+      serif: ["Noto Serif JP"],
+    },
     extend: {
-      colors: {
-        muji: '#f4eddd',
-      },
     },
   },
   plugins: [],

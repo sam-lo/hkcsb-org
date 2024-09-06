@@ -1,6 +1,14 @@
 import Image from "next/image";
 import poster from "@/public/poster.jpeg";
 
+const Details = {
+  title: "The First Note",
+  date: "1st March 2024",
+  time: "7:30 PM",
+  location: "Lee Hysan Concert Hall",
+  price: "$200 Per Ticket"
+}
+
 const Programme = [
   {
     id: 1,
@@ -25,16 +33,12 @@ export default function Event() {
       <Image src={poster} alt="conducter" className="w-1/3 shadow-2xl shadow-black hover:scale-[1.02] duration-500 transition-all"/>
       <div className="flex flex-col space-y-4 w-1/2 text-slate-700 text-left">
         <div className="w-full px-10 h-2 bg-red-800"/>
-        <div className="text-6xl font-serif">
-          The First Note
+        <div className="text-6xl w-fit font-serif">
+          {Details.title}
         </div>
         <div className="text-xl w-fit text-slate-700">
-          <div className="w-full px-10 h-1 mb-4 bg-red-800"/>
-          1st March 2024 | 7:30 PM
-        </div>
-        <div className="text-xl w-fit text-slate-700">
-          <div className="w-full px-10 h-1 mb-4 bg-red-800"/>
-          Lee Hysan Concert Hall | $200 per ticket | Free Seating
+          <div className="px-10 h-1 mb-4 bg-red-800"/>
+          {Details.time} | {Details.date} | {Details.location} | {Details.price}
         </div>
         <div className="w-full px-10 h-2 bg-red-800"/>
         <div className="flex flex-col space-y-4 text-lg text-justify">
