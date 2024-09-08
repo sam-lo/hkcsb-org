@@ -20,10 +20,10 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <div className="w-full relative flex lg:hidden items-center justify-end py-6 sm:px-16 px-8">
+        <div className="relative flex lg:hidden items-center justify-end py-5 sm:px-16 px-6">
           <Popover className="">
             <PopoverButton className="active:opacity-100 focus:outline-none opacity-80">
-              <Bars3Icon className="w-10" aria-hidden={true}/>
+              <Bars3Icon className="w-8" aria-hidden={true}/>
             </PopoverButton>
             <Transition
               as={Fragment}
@@ -34,7 +34,7 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-            <PopoverPanel className="absolute lg:right-16 right-8 z-10 text-slate-700 rounded-3xl bg-slate-50 transition duration-300 ease-in-out">
+            <PopoverPanel className="absolute right-8 flex inset-x-0 z-10 w-screen max-w-max text-slate-700 rounded-3xl bg-slate-50 transition duration-300 ease-in-out">
               <div
                 className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-slate-50 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-2">

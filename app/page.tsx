@@ -8,18 +8,18 @@ export default function Home() {
     <>
       <div className="w-full lg:h-[45rem] h-[38rem] overflow-hidden relative overflow-x-auto selection:bg-slate-700/50">
         <Image src={concert} alt="Concert Hall" className="brightness-[0.3] object-cover h-full select-none"/>
-        <div className="flex flex-col w-full lg:w-[50rem] absolute lg:inset-y-14 inset-0 left-0 sm:px-16 px-8 py-16">
+        <div className="flex flex-col w-full lg:w-[50rem] absolute lg:inset-y-14 inset-0 left-0 sm:px-16 px-6 py-12">
           <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
-          <div className="flex flex-col text-slate-50 sm:space-y-6 space-y-3">
-            <div className="font-serif font-bold text-left md:text-5xl text-4xl w-fit">
+          <div className="flex flex-col text-slate-50 md:space-y-6 sm:space-y-3 space-y-2">
+            <div className="font-serif font-bold text-left md:text-5xl sm:text-4xl text-2xl w-fit">
               Carpe Symphonic Band
             </div>
-            <div className="text-left sm:text-2xl text-lg opacity-80 w-fit">
+            <div className="text-left md:text-2xl sm:text-lg opacity-80 w-fit">
               卡爾佩管樂團
             </div>
           </div>
           <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
-          <div className="flex flex-col space-y-4 sm:text-lg text-md opacity-80">
+          <div className="flex flex-col space-y-4 sm:text-lg text-md text-slate-50 opacity-80">
             <div>
               “Carpe”一詞源自拉丁文的“Carpe
               Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分利用眼前的每一刻。然而，它的意義不僅僅是享受當下，更是強調在如今的每一次機會中，為未來的成長奠定基礎。
