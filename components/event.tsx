@@ -1,5 +1,5 @@
 import Image from "next/image";
-import poster from "@/public/poster.jpeg";
+import poster from "@/public/photo/poster.jpeg";
 
 const Details = {
   title: "The First Note",

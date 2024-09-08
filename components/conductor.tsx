@@ -1,5 +1,5 @@
 import Image from "next/image";
-import conductor from "@/public/conductor.jpg";
+import conductor from "@/public/photo/conductor.jpg";
 
 export default function Conductor() {
   return (

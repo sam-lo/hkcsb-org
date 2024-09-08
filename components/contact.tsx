@@ -1,5 +1,5 @@
 import {EnvelopeIcon, GlobeAsiaAustraliaIcon, PhoneIcon} from "@heroicons/react/24/outline";
-import practice from "@/public/practice.jpeg";
+import practice from "@/public/photo/practice.jpeg";
 import Image from "next/image";
 
 export default function Contact() {
