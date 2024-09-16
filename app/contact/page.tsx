@@ -16,7 +16,7 @@ export default function Contact() {
       id: 2,
       icon: EnvelopeIcon,
       text: "info@hkcsb.org ｜ 一般查詢",
-      href: "mailto://info@hkcsb.org",
+      href: "mailto:info@hkcsb.org",
     },
     {
       id: 3,
@@ -62,14 +62,10 @@ export default function Contact() {
             <p className="md:text-2xl text-lg font-gothic opacity-80">
               您的想法對我們很重要。我們樂於接受新的想法、建議、問題和建議。請隨時與我們聯繫。您可以根據您的需求透過以下方式找到我們。
             </p>
-
-            <p className="md:text-2xl text-lg font-gothic opacity-80">
-              新界葵涌葵德街16-26號，金德工業大廈 11樓1120室
-            </p>
           </div>
           <div className="flex flex-col py-8 space-y-4 md:text-2xl text-lg text-slate-700 opacity-80">
             {contactMethods.map((method) => (
-              <a key={method.id} href={method.href} className="flex md:space-x-8 space-x-3 items-center">
+              <a key={method.id} href={method.href} className="flex md:space-x-8 space-x-3 items-center hover:text-red-800 transition-all duration-500">
                 <method.icon className="md:w-10 w-7 text-red-800"/>
                 <p>{method.text}</p>
               </a>
