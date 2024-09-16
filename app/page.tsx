@@ -21,8 +21,8 @@ export default function Home() {
               <p className="font-serif font-bold md:text-5xl sm:text-4xl text-2xl w-fit">
                 Carpe Symphonic Band
               </p>
-              <p className="md:text-2xl sm:text-lg opacity-80 w-fit">
-                卡彼管樂團
+              <p className="font-serif md:text-2xl sm:text-lg opacity-80 w-fit">
+                Aim High, Dream High
               </p>
             </div>
             <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
@@ -48,11 +48,11 @@ export default function Home() {
 
         {/* Menu Items */}
 
-          <div className="flex w-full py-20 sm:px-16 px-6 justify-around flex-wrap">
+          <div className="flex w-full py-16 sm:px-16 px-6 justify-around flex-wrap gap-8">
             {filteredItems.map((menu) => (
-              <a href={menu.href} key={menu.id} className="group flex flex-col hover:-translate-y-1 transition-all duration-500 w-72 gap-2">
-                <Image src={menu.image} alt="Image" className="h-52 rounded-3xl lg:grayscale-[0.7] lg:group-hover:grayscale-0 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-black/80"/>
-                <div className="flex space-x-2 group-hover:text-red-800 transition-all duration-500 text-slate-700 rounded-3xl min-w-96">
+              <a href={menu.href} key={menu.id} className="w-72">
+                {/* <Image src={menu.image} alt="Image" className="h-52 rounded-3xl lg:grayscale-[0.7] lg:group-hover:grayscale-0 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-black/80"/> */}
+                <div className="flex space-x-2 hover:text-white transition-all hover:bg-slate-700 bg-slate-400 duration-300 text-slate-700 rounded-3xl w-full py-4 px-6 hover:-rotate-1 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-900/50">
                   <menu.icon className="w-12"/>
                   <div className="flex flex-col">
                     <p className="text-2xl">{menu.name}</p>
