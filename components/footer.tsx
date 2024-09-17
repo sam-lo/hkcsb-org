@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/logo.png";
+import logo from "@/public/LOGO.png";
 import {menusItems} from "@/app/data/menuItems";
 
 export default function Footer () {
