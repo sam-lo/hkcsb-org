@@ -8,16 +8,22 @@ export default function Footer () {
 
   return (
     <>
-      <div className="flex bg-slate-900 px-16 py-20 space-x-8 items-center">
-        <Image src={logo} alt={"Carpe Symphonic Band"} className="w-32"/>
+      <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 bg-gradient-to-r from-slate-900 to-slate-950 lg:px-16 px-6 py-12 lg:space-x-8 items-center">
+        <Image src={logo} alt={"Carpe Symphonic Band"} className="w-20"/>
         <div className="flex flex-col space-y-2">
-          {filteredItems.map((menu) => (
-            <a key={menu.id} href={menu.href} className="">
-              <p className="hover:opacity-70">
-                {menu.name}
-              </p>
-            </a>
-          ))}
+          <div className="flex lg:space-x-8 lg:space-y-0 space-y-4 flex-col lg:flex-row">
+            {filteredItems.map((menu) => (
+              <a key={menu.id} href={menu.href} className="flex items-center space-x-2">
+                <menu.icon className="w-8"/>
+                <p className="text-lg hover:opacity-70">
+                  {menu.name}
+                </p>
+              </a>
+            ))}
+          </div>
+          <p className="font-gothic text-sm pt-4">
+            ©2024 Carpe Symphonic Band. All Rights Reserved.
+          </p>
         </div>
       </div>
     </>

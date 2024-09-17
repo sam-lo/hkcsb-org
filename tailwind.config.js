@@ -9,7 +9,8 @@ module.exports = {
     fontFamily: {
       sans: ["Noto Sans JP"],
       serif: ["Noto Serif JP"],
-      gothic: ["Zen Maru Gothic"]
+      gothic: ["Zen Maru Gothic"],
+      Comorant: ["Comorant"]
     },
     extend: {
     },

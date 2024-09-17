@@ -21,7 +21,7 @@ export default function Home() {
               <p className="font-serif font-bold md:text-5xl sm:text-4xl text-2xl w-fit">
                 Carpe Symphonic Band
               </p>
-              <p className="font-serif md:text-2xl sm:text-lg opacity-80 w-fit">
+              <p className="italic font-Comorant md:text-2xl sm:text-lg opacity-80 w-fit">
                 Aim High, Dream High
               </p>
             </div>
@@ -52,7 +52,7 @@ export default function Home() {
             {filteredItems.map((menu) => (
               <a href={menu.href} key={menu.id} className="w-72">
                 {/* <Image src={menu.image} alt="Image" className="h-52 rounded-3xl lg:grayscale-[0.7] lg:group-hover:grayscale-0 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-black/80"/> */}
-                <div className="flex space-x-2 hover:text-white transition-all hover:bg-slate-700 bg-slate-400 duration-300 text-slate-700 rounded-3xl w-full py-4 px-6 hover:-rotate-1 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-900/50">
+                <div className="flex space-x-2 text-white transition-all bg-slate-800 hover:bg-red-900 duration-300 rounded-3xl w-full py-4 px-6 hover:-rotate-1 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-900/50">
                   <menu.icon className="w-12"/>
                   <div className="flex flex-col">
                     <p className="text-2xl">{menu.name}</p>

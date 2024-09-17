@@ -39,7 +39,7 @@ export default function Contact() {
                 聯絡我們
               </p>
               <p className="md:text-2xl sm:text-lg opacity-80 w-fit">
-                歡迎透過以下方式查詢
+                可透過以下方式查詢
               </p>
             </div>
             <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
@@ -57,7 +57,7 @@ export default function Contact() {
         <div className="sm:px-16 px-6 flex xl:flex-row flex-col xl:items-center items-start xl:space-x-28 justify-center py-12 md:py-24">
           <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
             <p className="md:text-6xl text-4xl font-gothic">
-              請隨時聯絡我們
+              歡迎隨時聯絡我們
             </p>
             <p className="md:text-2xl text-lg font-gothic opacity-80">
               您的想法對我們很重要。我們樂於接受新的想法、建議、問題和建議。請隨時與我們聯繫。您可以根據您的需求透過以下方式找到我們。

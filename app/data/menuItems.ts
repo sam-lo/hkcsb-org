@@ -8,7 +8,7 @@ import {
 import practice from "@/public/photo/practice.jpeg";
 import orchestra from "@/public/photo/orchestra.jpg";
 import contact from "@/public/photo/contact.jpeg";
-import conductorsit from "@/public/photo/conductorsit.jpg";
+import conductorsit from "@/public/photo/conductorstairsit.jpg";
 
 
 export const menusItems = [
