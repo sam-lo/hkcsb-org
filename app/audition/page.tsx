@@ -33,7 +33,7 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="sm:px-16 px-6 flex lg:flex-row flex-col lg:items-center items-start lg:space-x-28 justify-center py-12 md:py-18">
+        className="sm:px-16 px-6 flex lg:flex-row flex-col lg:items-center lg:space-x-28 justify-center py-12 md:py-18">
         <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
           <p className="md:text-6xl text-4xl font-gothic">
             歡迎參加甄選
@@ -45,17 +45,17 @@ export default function Audition() {
             試音時，您將會被要求演奏一首自選曲目，以展示您的音樂技巧。我們亦會進行一些簡單的樂理測試，以確保您對音樂的理解程度。
           </p>*/}
           <div className="flex flex-col space-y-2">
-            <p className="md:text-3xl sm:text-xl font-gothic">樂手要求</p>
-            <ul className="list-disc list-inside text-lg">
+            <p className="md:text-3xl text-2xl font-gothic">樂手要求</p>
+            <ul className="list-disc list-inside text-md">
               <li>16歲以上 (具有自理能力)</li>
-              <li>若申請人屬於18歲以下需要家長或監護人同意</li>
+              <li>若申請人未滿18歲需要家長或監護人同意</li>
               <li>ABRSM 第六級以上或相等程度資歷</li>
               <li>需要有1年或以上樂團經驗</li>
             </ul>
           </div>
           <div className="flex flex-col space-y-2">
-            <p className="md:text-3xl sm:text-xl font-gothic">甄選程序</p>
-            <ul className="list-decimal list-inside text-lg">
+            <p className="md:text-3xl text-2xl  font-gothic">甄選程序</p>
+            <ul className="list-decimal list-inside text-md">
               <li>簡單面談</li>
               <li>演奏水平測試 (即場視譜及自選樂曲)</li>
               <li>樂團坐奏測試</li>
