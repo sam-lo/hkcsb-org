@@ -10,12 +10,12 @@ export default function Footer () {
     <>
       <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 bg-gradient-to-r from-slate-900 to-slate-950 lg:px-16 px-6 py-12 lg:space-x-8 items-center">
         <Image src={logo} alt={"Carpe Symphonic Band"} className="w-20"/>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col">
           <div className="flex lg:space-x-8 lg:space-y-0 space-y-4 flex-col lg:flex-row">
             {filteredItems.map((menu) => (
-              <a key={menu.id} href={menu.href} className="flex items-center space-x-2">
+              <a key={menu.id} href={menu.href} className="hover:opacity-70 flex space-x-2">
                 <menu.icon className="w-8"/>
-                <p className="text-lg hover:opacity-70">
+                <p className="text-lg">
                   {menu.name}
                 </p>
               </a>

@@ -23,15 +23,13 @@ export default function About() {
             </p>
           </div>
           <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
-          <div
-            className="hidden lg:block group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-5 transition-all duration-300">
-            <div className="flex items-center justify-between">
-              <p className="text-slate-700 text-xl">
-                即將舉行的音樂會
-              </p>
-              <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
-            </div>
-          </div>
+          <a href="/concert"
+             className="items-center justify-between hidden lg:flex group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-6 transition-all duration-300">
+            <p className="text-slate-700 text-xl">
+              即將舉行的音樂會
+            </p>
+            <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
+          </a>
         </div>
       </div>
       <AboutCarpe/>

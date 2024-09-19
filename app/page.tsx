@@ -35,13 +35,11 @@ export default function Home() {
                 我們希望聚集一群對音樂有深厚造詣與追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每一次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每一次的演出都是一次寶貴的經驗，每一次的練習都是對未來的投資。
               </p>
             </div>
-            <a href="/concert" className="hidden lg:block group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-8 transition-all duration-300">
-              <div className="flex items-center justify-between">
+            <a href="/concert" className="items-center justify-between hidden lg:flex group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-8 transition-all duration-300">
                 <p className="text-slate-700 text-xl">
                   即將舉行的音樂會
                 </p>
                 <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
-              </div>
             </a>
           </div>
         </div>
