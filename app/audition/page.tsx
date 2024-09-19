@@ -93,7 +93,7 @@ function AuditionForm() {
   let WhatsAppLink = "https://wa.me/85254031510?text=申請人資料｜%0A中英文全名：" + chineseName + " " + englishName + "｜%0A稱謂：" + title + "｜%0A流動電話：" + phone + "｜%0A電郵地址：" + email
 
   return (
-    <div className="w-full max-w-lg my-8">
+    <div className="lg:w-full max-w-lg my-8">
       <Fieldset className="space-y-4 font-gothic text-slate-700 rounded-3xl">
         <Legend className="text-4xl">試音表格</Legend>
         <Field className="flex flex-col">
