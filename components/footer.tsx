@@ -8,7 +8,7 @@ export default function Footer () {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 bg-gradient-to-r from-slate-900 to-slate-950 lg:px-16 px-6 py-12 lg:space-x-8 items-center">
+      <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 text-slate-50 bg-gradient-to-r from-slate-900 to-slate-950 lg:px-16 px-6 py-12 lg:space-x-8 items-center">
         <Image src={logo} alt={"Carpe Symphonic Band"} className="w-20"/>
         <div className="flex flex-col">
           <div className="flex lg:space-x-8 lg:space-y-0 space-y-4 flex-col lg:flex-row">
