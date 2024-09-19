@@ -33,7 +33,7 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="sm:px-16 px-6 flex lg:flex-row flex-col lg:items-center lg:space-x-28 justify-center py-12 md:py-18">
+        className="sm:px-16 px-6 flex lg:flex-row flex-col items-center lg:space-x-28 justify-center py-12 md:py-18">
         <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
           <p className="md:text-6xl text-4xl font-gothic">
             歡迎參加甄選
@@ -61,9 +61,12 @@ export default function Audition() {
               <li>樂團坐奏測試</li>
             </ul>
           </div>
-          <a href="/contact" className="hover:text-red-800 md:text-2xl sm:text-lg opacity-80">
-            如果您對試音有任何疑問，請隨時與我們聯絡。
-          </a>
+          <div className="flex group">
+            <a href="/contact" className="w-fit hover:text-red-800 md:text-2xl sm:text-lg opacity-80">
+              如果您對試音有任何疑問，請隨時與我們聯絡。
+            </a>
+            <ArrowRightIcon className="w-8 -translate-x-12 transition-all duration-300 opacity-0 group-hover:-translate-x-2 group-hover:opacity-100 group-hover:text-red-800"/>
+          </div>
         </div>
         <AuditionForm/>
       </div>
@@ -100,22 +103,22 @@ function AuditionForm() {
           <Label className="text-xl">中文全名</Label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
                  className="mt-2 bg-slate-300 rounded-2xl focus:outline-none px-4 py-3"/>
-          {/[\u4e00-\u9fa5]/.test(chineseName) ? null :
+          {/[\u4e00-\u9fa5]/.test(chineseName) && chineseName !== "" ? null :
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入中文姓名</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">英文全名</Label>
           <Input id="englishName" onChange={(e) => setEnglishName(e.target.value)} type="text"
                  className="mt-2 bg-slate-300 rounded-2xl focus:outline-none px-4 py-3"/>
-          {/^[a-zA-Z\s]*$/.test(englishName) ? null :
+          {/^[a-zA-Z\s]*$/.test(englishName) && englishName !== "" ? null :
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入英文姓名</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">稱謂</Label>
           <div className="relative">
             <Select id="title" onChange={(e) => setTitle(e.target.value)} className={clsx(
-              'mt-3 block w-full rounded-2xl border-none bg-slate-300 py-3 px-4',
-              'rounded-xl focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25'
+              'mt-3 block w-full rounded-2xl appearance-none border-none bg-slate-300 p-4',
+              'rounded-2xl focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25'
             )}>
               {titleOptions.map((option) => (
                 <option key={option.id}>{option.value}</option>
@@ -138,7 +141,7 @@ function AuditionForm() {
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入正確的電郵地址</p>}
         </Field>
         <Field className="flex flex-col items-end space-y-1 py-3">
-          <a href={WhatsAppLink} className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "grayscale cursor-not-allowed")}>提交申請</a>
+          <a href={WhatsAppLink} className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "pointer-events-none grayscale cursor-not-allowed")}>提交申請</a>
           <div className="text-slate-700">
             {validation ? null : <p className="text-sm opacity-70 text-center">請填寫正確的資料</p>}
           </div>
