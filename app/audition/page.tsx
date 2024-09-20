@@ -96,20 +96,20 @@ function AuditionForm() {
   let WhatsAppLink = "https://wa.me/85254031510?text=申請人資料｜%0A中英文全名：" + chineseName + " " + englishName + "｜%0A稱謂：" + title + "｜%0A流動電話：" + phone + "｜%0A電郵地址：" + email
 
   return (
-    <div className="lg:w-full max-w-lg my-8">
-      <Fieldset className="space-y-4 font-gothic text-slate-700 rounded-3xl">
+    <div className="w-full max-w-lg my-8">
+      <Fieldset className="space-y-4 font-gothic text-slate-700">
         <Legend className="text-4xl">試音表格</Legend>
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
-                 className="mt-2 bg-slate-300 rounded-2xl focus:outline-none px-4 py-3"/>
+                 className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5"/>
           {/[\u4e00-\u9fa5]/.test(chineseName) && chineseName !== "" ? null :
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入中文姓名</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">英文全名</Label>
           <Input id="englishName" onChange={(e) => setEnglishName(e.target.value)} type="text"
-                 className="mt-2 bg-slate-300 rounded-2xl focus:outline-none px-4 py-3"/>
+                 className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5"/>
           {/^[a-zA-Z\s]*$/.test(englishName) && englishName !== "" ? null :
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入英文姓名</p>}
         </Field>
@@ -117,7 +117,7 @@ function AuditionForm() {
           <Label className="text-xl">稱謂</Label>
           <div className="relative">
             <Select id="title" onChange={(e) => setTitle(e.target.value)} className={clsx(
-              'mt-3 block w-full rounded-2xl appearance-none border-none bg-slate-300 p-4',
+              'mt-2 block w-full rounded-2xl appearance-none text-lg border-none bg-slate-300 px-4 py-3',
               'rounded-2xl focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25'
             )}>
               {titleOptions.map((option) => (
@@ -129,14 +129,14 @@ function AuditionForm() {
         <Field className="flex flex-col">
           <Label className="text-xl">流動電話（香港）</Label>
           <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
-                 className="mt-2 bg-slate-300 rounded-2xl focus:outline-none px-4 py-3"/>
+                 className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5"/>
           {/^[0-9]{8}$/.test(phone) ? null :
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入8位數字的電話號碼</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">電郵地址</Label>
           <Input id="Email" onChange={(e) => setEmail(e.target.value)} type="text"
-                 className="mt-2 bg-slate-300 rounded-2xl focus:outline-none px-4 py-3"/>
+                 className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5"/>
           {/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ? null :
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入正確的電郵地址</p>}
         </Field>

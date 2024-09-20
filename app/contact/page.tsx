@@ -43,18 +43,17 @@ export default function Contact() {
               </p>
             </div>
             <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
-            <div
-              className="hidden lg:block group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-5 transition-all duration-300">
-              <div className="flex items-center justify-between">
-                <p className="text-slate-700 text-xl">
-                  即將舉行的音樂會
-                </p>
-                <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
-              </div>
-            </div>
+            <a href="/concert"
+               className="items-center justify-between hidden lg:flex group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-6 transition-all duration-300">
+              <p className="text-slate-700 text-xl">
+                即將舉行的音樂會
+              </p>
+              <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
+            </a>
           </div>
         </div>
-        <div className="sm:px-16 px-6 flex xl:flex-row flex-col xl:items-center items-start xl:space-x-28 justify-center py-12 md:py-24">
+        <div
+          className="sm:px-16 px-6 flex xl:flex-row flex-col xl:items-center items-start xl:space-x-28 justify-center py-12 md:py-24">
           <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
             <p className="md:text-6xl text-4xl font-gothic">
               歡迎隨時聯絡我們
@@ -65,7 +64,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-col py-8 space-y-4 md:text-2xl text-lg text-slate-700 opacity-80">
             {contactMethods.map((method) => (
-              <a key={method.id} href={method.href} className="flex md:space-x-8 space-x-3 items-center hover:text-red-800 transition-all duration-500">
+              <a key={method.id} href={method.href} className="flex md:space-x-8 space-x-3 items-center hover:text-red-800 transition-all duration-300">
                 <method.icon className="md:w-10 w-7 text-red-800"/>
                 <p>{method.text}</p>
               </a>

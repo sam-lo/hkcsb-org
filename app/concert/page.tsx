@@ -21,6 +21,9 @@ export default function Concert() {
           <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
         </div>
       </div>
+      <div>
+
+      </div>
     </div>
   )
 }

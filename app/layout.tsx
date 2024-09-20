@@ -11,7 +11,7 @@ interface LayoutProps {
 
 export const metadata: Metadata = {
   title: "Carpe Symphonic Band",
-  description: "Live a little",
+  description: "Aim High, Dream High",
 };
 
 export default function RootLayout({children}: LayoutProps) {
