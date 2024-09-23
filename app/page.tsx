@@ -12,21 +12,21 @@ export default function Home() {
     <>
       <div className="flex flex-col">
         <div
-          className="w-full lg:h-[45rem] h-[38rem] overflow-hidden relative overflow-x-auto selection:bg-slate-700/50">
-          <Image src={concert} alt="Concert Hall" className="brightness-[0.3] object-cover h-full select-none"/>
+          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[38rem] lg:h-[45rem]">
+          <Image src={concert} alt="Concert Hall" className="h-full select-none object-cover brightness-[0.3] grayscale-[0.5]"/>
           <div
-            className="flex flex-col w-full lg:w-[50rem] absolute lg:inset-y-20 inset-0 left-0 sm:px-16 px-6 py-12">
-            <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
-            <div className="flex flex-col text-slate-50 md:space-y-6 sm:space-y-3 space-y-2">
-              <p className="font-serif font-bold md:text-5xl sm:text-4xl text-2xl w-fit">
+            className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+            <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+            <div className="flex flex-col text-slate-50 space-y-2 sm:space-y-3 md:space-y-6">
+              <p className="w-fit font-serif text-2xl font-bold sm:text-4xl md:text-5xl">
                 Carpe Symphonic Band
               </p>
-              <p className="italic font-Comorant md:text-2xl sm:text-lg opacity-80 w-fit">
+              <p className="w-fit italic opacity-80 font-Comorant sm:text-lg md:text-2xl">
                 Aim High, Dream High
               </p>
             </div>
-            <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
-            <div className="flex flex-col space-y-4 sm:text-lg text-md text-slate-50 opacity-80">
+            <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+            <div className="flex flex-col text-slate-50 opacity-80 space-y-4 text-md sm:text-lg">
               <p>
                 “Carpe”一詞源自拉丁文的“Carpe
                 Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分利用眼前的每一刻。然而，它的意義不僅僅是享受當下，更是強調在如今的每一次機會中，為未來的成長奠定基礎。
@@ -35,26 +35,28 @@ export default function Home() {
                 我們希望聚集一群對音樂有深厚造詣與追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每一次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每一次的演出都是一次寶貴的經驗，每一次的練習都是對未來的投資。
               </p>
             </div>
-            <a href="/concert" className="items-center justify-between hidden lg:flex group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-8 transition-all duration-300">
-                <p className="text-slate-700 text-xl">
+            <a href="/concert" className="my-8 hidden w-64 select-none items-center justify-between rounded-3xl bg-slate-50/80 px-5 py-4 transition-all duration-300 group hover:bg-slate-50 lg:flex">
+                <p className="text-xl text-slate-700">
                   即將舉行的音樂會
                 </p>
-                <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
+                <ArrowRightIcon className="w-8 text-slate-700 transition-all group-hover:-rotate-45"/>
             </a>
           </div>
         </div>
 
         {/* Menu Items */}
 
-          <div className="flex w-full py-16 sm:px-16 px-6 justify-around flex-wrap gap-8">
+          <div className="flex w-full flex-wrap justify-around gap-8 px-6 py-16 sm:px-16">
             {filteredItems.map((menu) => (
-              <a href={menu.href} key={menu.id} className="w-72">
-                {/* <Image src={menu.image} alt="Image" className="h-52 rounded-3xl lg:grayscale-[0.7] lg:group-hover:grayscale-0 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-black/80"/> */}
-                <div className="flex space-x-2 text-white transition-all bg-slate-800 hover:bg-red-900 duration-300 rounded-3xl w-full py-4 px-6 hover:-rotate-1 hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-900/50">
-                  <menu.icon className="w-12"/>
+              <a href={menu.href} key={menu.id} className="w-96">
+                <div className="flex w-full flex-col rounded-3xl bg-slate-800 p-6 text-white transition-all duration-300 group space-y-6 hover:-translate-y-2 hover:-rotate-1 hover:bg-red-900 hover:shadow-2xl hover:shadow-slate-900/80">
+                  <div className="flex items-start justify-between">
+                    <menu.icon className="w-14"/>
+                    <ArrowRightIcon className="w-7 group-hover:-rotate-45 transition-all duration-300"/>
+                  </div>
                   <div className="flex flex-col">
                     <p className="text-2xl">{menu.name}</p>
-                    <p className="opacity-70">{menu.description}</p>
+                    <p className="opacity-50">{menu.fullDescription}</p>
                   </div>
                 </div>
               </a>

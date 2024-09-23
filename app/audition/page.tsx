@@ -45,7 +45,7 @@ export default function Audition() {
             試音時，您將會被要求演奏一首自選曲目，以展示您的音樂技巧。我們亦會進行一些簡單的樂理測試，以確保您對音樂的理解程度。
           </p>*/}
           <div className="flex flex-col space-y-2">
-            <p className="md:text-3xl text-2xl font-gothic">樂手要求</p>
+            <p className="md:text-3xl text-2xl font-gothic">試音要求</p>
             <ul className="list-disc list-inside text-md">
               <li>16歲以上 (具有自理能力)</li>
               <li>若申請人未滿18歲需要家長或監護人同意</li>
@@ -65,7 +65,8 @@ export default function Audition() {
             <a href="/contact" className="w-fit hover:text-red-800 md:text-2xl sm:text-lg opacity-80">
               如果您對試音有任何疑問，請隨時與我們聯絡。
             </a>
-            <ArrowRightIcon className="w-8 -translate-x-12 transition-all duration-300 opacity-0 group-hover:-translate-x-2 group-hover:opacity-100 group-hover:text-red-800"/>
+            <ArrowRightIcon
+              className="w-8 -translate-x-12 transition-all duration-300 opacity-0 group-hover:-translate-x-2 group-hover:opacity-100 group-hover:text-red-800"/>
           </div>
         </div>
         <AuditionForm/>
@@ -141,7 +142,8 @@ function AuditionForm() {
             <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入正確的電郵地址</p>}
         </Field>
         <Field className="flex flex-col items-end space-y-1 py-3">
-          <a href={WhatsAppLink} className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "pointer-events-none grayscale cursor-not-allowed")}>提交申請</a>
+          <a href={WhatsAppLink}
+             className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "pointer-events-none grayscale cursor-not-allowed")}>提交申請</a>
           <div className="text-slate-700">
             {validation ? null : <p className="text-sm opacity-70 text-center">請填寫正確的資料</p>}
           </div>

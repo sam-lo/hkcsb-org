@@ -56,10 +56,7 @@ export default function Event() {
               ))}
             </div>
           </div>
-          <div className="opacity-80">
-            與此同時，梁氏在香港及英國深造期間分別跟隨白榮輝先生與羅保莙女士，及Mr. Mark Heron 學習管樂團及管弦樂團指揮。
-            自 2016 年起擔任聖若瑟英文中學管樂團及2022年起擔任香港世紀管樂團助理指揮，並在2024年起擔任基督教宣道會宣基中學管樂團指揮一職。
-          </div>
+
         </div>
         <div className="w-full px-10 h-2 bg-red-800"/>
       </div>

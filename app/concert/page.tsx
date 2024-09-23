@@ -1,28 +1,118 @@
 import Image from "next/image";
 import hallwithaudience from "@/public/photo/hallwithaudience.jpg";
+import poster from "@/public/photo/poster.png";
 import React from "react";
+import {CalendarDaysIcon} from "@heroicons/react/24/outline";
 
 export default function Concert() {
+
   return (
     <div className="flex flex-col">
       <div
-        className="w-full lg:h-[25rem] h-[15rem] overflow-hidden relative overflow-x-auto selection:bg-slate-700/50">
-        <Image src={hallwithaudience} alt="Concert Hall" className="brightness-[0.4] object-cover h-full select-none"/>
-        <div className="flex flex-col w-full lg:w-[50rem] absolute lg:inset-y-24 inset-0 left-0 sm:px-16 px-6 py-12">
-          <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
-          <div className="flex flex-col text-slate-50 md:space-y-4 space-y-2">
-            <p className="font-serif font-bold md:text-5xl text-4xl w-fit">
+        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
+        <Image src={hallwithaudience} alt="Concert Hall"
+               className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
+        <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
+          <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+          <div className="flex flex-col text-slate-50 space-y-2 lg:space-y-4">
+            <p className="w-fit font-serif text-4xl font-bold lg:text-5xl">
               音樂會與門票
             </p>
-            <p className="md:text-2xl sm:text-lg opacity-80 w-fit">
+            <p className="w-fit text-lg opacity-80 lg:text-2xl">
               了解即將舉行的音樂會
             </p>
           </div>
-          <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
+          <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
         </div>
       </div>
-      <div>
+      <ConcertDescription/>
+    </div>
+  )
+}
 
+function ConcertDescription() {
+
+  const Details = {
+    title: "The First Note",
+    date: "1st March 2024",
+    time: "7:30 PM",
+    location: "Lee Hysan Concert Hall",
+    price: "200HKD Per Ticket",
+    Programme: [
+      {
+        id: 1,
+        composer: "James Barnes",
+        piece: "Alvamar Overture",
+        duration: "8"
+      },
+      {
+        id: 2,
+        composer: "Steven Reineke",
+        piece: "Fate of the Gods",
+        duration: "9"
+      },
+      {
+        id: 3,
+        composer: "Gustav Holst",
+        piece: "Second Suite for Military Band in F major",
+        duration: "12"
+      },
+      {
+        id: 4,
+        composer: "Itaru Sakai",
+        piece: "The Seventh Night of July",
+        duration: "9"
+      },
+      {
+        id: 5,
+        composer: "George Gershwin / arr. Ferde Grofé",
+        piece: "Rhapsody in Blue",
+        duration: "18~"
+      },
+      {
+        id: 6,
+        composer: "久石譲 / arr. 後藤 洋",
+        piece: "My Neighbor Totoro",
+        duration: "9"
+      }
+    ]
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-around px-6 py-12 space-y-8 lg:space-y-0 lg:flex-row lg:px-16">
+      <Image src={poster} alt="poster" className="h-fit lg:w-1/3"/>
+      <div className="flex h-fit flex-col lg:w-1/2">
+        <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+        <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
+          <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
+            {Details.title}
+          </p>
+          <p className="w-fit text-sm opacity-80 md:text-xl">
+            {Details.date} | {Details.time} | {Details.location}
+          </p>
+        </div>
+        <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+        <div className="flex flex-col text-slate-700 space-y-6">
+          <p className="text-xl font-bold">
+            Programme Highlights
+          </p>
+          <div className="flex flex-col space-y-3">
+            {Details.Programme.map((item) => (
+              <div key={item.id} className="flex items-center space-x-2">
+                <p className="font-bold">{item.composer}</p>
+                <div>|</div>
+                <p>{item.piece}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex py-4 flex-row-reverse">
+          <a href="/concert"
+             className="flex rounded-xl bg-slate-500 px-4 py-3 text-2xl text-white transition-all duration-300 space-x-2 font-gothic hover:-translate-y-1 hover:-rotate-1 hover:bg-red-900 hover:shadow-2xl hover:shadow-slate-700/70">
+            <CalendarDaysIcon className="w-8"/>
+            <p>網上預訂門票</p>
+          </a>
+        </div>
       </div>
     </div>
   )

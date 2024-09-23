@@ -9,26 +9,26 @@ export default function About() {
   return (
     <div className="flex flex-col">
       <div
-        className="w-full lg:h-[28rem] h-[15rem] overflow-hidden relative overflow-x-hidden selection:bg-slate-700/50">
+        className="relative w-full overflow-hidden overflow-x-hidden selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
         <Image src={conducting} alt="Concert Hall"
-               className="brightness-[0.3] object-cover h-full select-none overflow-y-visible blur-sm lg:translate-y-60 scale-105"/>
-        <div className="flex flex-col w-full lg:w-[50rem] absolute lg:inset-y-20 inset-0 left-0 sm:px-16 px-6 py-12">
-          <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
-          <div className="flex flex-col text-slate-50 md:space-y-4 space-y-2">
-            <p className="font-serif font-bold md:text-5xl text-4xl w-fit">
+               className="h-full select-none overflow-y-visible object-cover brightness-[0.3] grayscale-[0.6] lg:translate-y-60"/>
+        <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+          <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+          <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
+            <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
               關於樂團
             </p>
-            <p className="md:text-2xl sm:text-lg opacity-80 w-fit">
+            <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
               了解 Carpe Symphonic Band 的資訊
             </p>
           </div>
-          <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
+          <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="items-center justify-between hidden lg:flex group select-none bg-slate-50/80 hover:bg-slate-50 w-64 py-4 px-5 rounded-3xl my-6 transition-all duration-300">
-            <p className="text-slate-700 text-xl">
+             className="my-6 hidden w-64 select-none items-center justify-between rounded-3xl bg-slate-50/80 px-5 py-4 transition-all duration-300 group hover:bg-slate-50 lg:flex">
+            <p className="text-xl text-slate-700">
               即將舉行的音樂會
             </p>
-            <ArrowRightIcon className="w-8 text-slate-700 group-hover:-rotate-45 transition-all "/>
+            <ArrowRightIcon className="w-8 text-slate-700 transition-all group-hover:-rotate-45"/>
           </a>
         </div>
       </div>
@@ -40,20 +40,20 @@ export default function About() {
 
 function AboutCarpe() {
   return (
-    <div className="flex lg:flex-row-reverse flex-col justify-around px-6 lg:px-16 py-12">
-      <Image src={practice} alt="practice" className="shadow-2xl shadow-black mb-6 h-fit lg:w-2/5"/>
-      <div className="flex flex-col lg:w-1/2 h-fit">
-        <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
-        <div className="flex flex-col text-slate-700 md:space-y-4 space-y-2">
-          <p className="font-serif font-bold md:text-4xl text-2xl w-fit">
+    <div className="flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 py-12 lg:flex-row-reverse lg:px-16">
+      <Image src={practice} alt="practice" className="h-fit shadow-black lg:w-2/5"/>
+      <div className="flex h-fit flex-col lg:w-1/2">
+        <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+        <div className="flex flex-col text-slate-700 space-y-2 lg:space-y-4">
+          <p className="w-fit font-serif text-2xl font-bold lg:text-4xl">
             Carpe Symphonic Band
           </p>
-          <p className="md:text-2xl font-Comorant italic sm:text-lg opacity-80 w-fit">
+          <p className="w-fit italic opacity-80 font-Comorant lg:text-2xl">
             Aim High, Dream High
           </p>
         </div>
-        <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
-        <div className="flex flex-col space-y-4 sm:text-lg text-md text-slate-700 opacity-80">
+        <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+        <div className="flex flex-col text-slate-700 opacity-80 space-y-4 text-md sm:text-lg">
           <p>
             “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分利用眼前的每一刻。
             然而，它的意義不僅僅是享受當下，更是強調在如今的每一次機會中，為未來的成長奠定基礎。
@@ -71,20 +71,20 @@ function AboutCarpe() {
 
 function AboutConductor() {
   return (
-    <div className="flex lg:flex-row flex-col justify-around px-6 lg:px-16 py-12">
-      <Image src={conductor} alt="Conductor" className="shadow-2xl shadow-black mb-6 h-fit lg:w-1/3"/>
-      <div className="flex flex-col lg:w-1/2 h-fit">
-        <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
-        <div className="flex flex-col text-slate-700 md:space-y-4 space-y-2">
-          <p className="font-serif font-bold md:text-5xl text-4xl w-fit">
+    <div className="flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 py-12 lg:flex-row lg:px-16">
+      <Image src={conductor} alt="Conductor" className="h-fit lg:w-1/3"/>
+      <div className="flex h-fit flex-col lg:w-1/2">
+        <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+        <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
+          <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
             梁境佑 先生
           </p>
-          <p className="md:text-2xl sm:text-lg opacity-80 w-fit">
+          <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
             首席指揮
           </p>
         </div>
-        <hr className="w-full px-10 border-2 my-5 border-red-800 brightness-125"/>
-        <div className="flex flex-col space-y-4 sm:text-lg text-md text-slate-700 opacity-80">
+        <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+        <div className="flex flex-col text-slate-700 opacity-80 space-y-4 text-md sm:text-lg">
           <p>
             梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院(Royal
             Northern College of Music)深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet
