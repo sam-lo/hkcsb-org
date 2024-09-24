@@ -8,9 +8,9 @@ import React, {useState} from "react";
 
 export default function Audition() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <div
-        className="w-full lg:h-[28rem] h-[15rem] overflow-hidden relative overflow-x-auto selection:bg-slate-700/50">
+        className="w-full lg:h-[28rem] h-[17rem] overflow-hidden relative overflow-x-auto selection:bg-slate-700/50">
         <Image src={hallwithpiano} alt="Concert Hall" className="brightness-[0.3] object-cover h-full select-none"/>
         <div className="flex flex-col w-full lg:w-[50rem] absolute lg:inset-y-20 inset-0 left-0 sm:px-16 px-6 py-12">
           <hr className="w-full px-10 border-4 my-5 border-red-800 brightness-125"/>
@@ -33,8 +33,8 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="sm:px-16 px-6 flex lg:flex-row flex-col items-center lg:space-x-28 justify-center py-12 md:py-18">
-        <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
+        className="sm:px-16 flex lg:flex-row flex-col items-center lg:space-x-28 justify-center py-12 md:py-18">
+        <div className="px-6 flex flex-col text-slate-700 max-w-[35rem] space-y-6">
           <p className="md:text-6xl text-4xl font-gothic">
             歡迎參加甄選
           </p>
@@ -61,7 +61,7 @@ export default function Audition() {
               <li>樂團坐奏測試</li>
             </ul>
           </div>
-          <div className="flex group">
+          <div className="flex space-x-2 group">
             <a href="/contact" className="w-fit hover:text-red-800 md:text-2xl sm:text-lg opacity-80">
               如果您對試音有任何疑問，請隨時與我們聯絡。
             </a>
@@ -97,7 +97,7 @@ function AuditionForm() {
   let WhatsAppLink = "https://wa.me/85254031510?text=申請人資料｜%0A中英文全名：" + chineseName + " " + englishName + "｜%0A稱謂：" + title + "｜%0A流動電話：" + phone + "｜%0A電郵地址：" + email
 
   return (
-    <div className="w-full max-w-lg my-8">
+    <div className="w-full max-w-lg lg:my-0 my-8 ">
       <Fieldset className="space-y-4 font-gothic text-slate-700">
         <Legend className="text-4xl">試音表格</Legend>
         <Field className="flex flex-col">

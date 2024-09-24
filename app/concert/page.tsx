@@ -107,7 +107,7 @@ function ConcertDescription() {
           </div>
         </div>
         <div className="flex py-4 flex-row-reverse">
-          <a href="/concert"
+          <a href="/concert/reservation"
              className="flex rounded-xl bg-slate-500 px-4 py-3 text-2xl text-white transition-all duration-300 space-x-2 font-gothic hover:-translate-y-1 hover:-rotate-1 hover:bg-red-900 hover:shadow-2xl hover:shadow-slate-700/70">
             <CalendarDaysIcon className="w-8"/>
             <p>網上預訂門票</p>
