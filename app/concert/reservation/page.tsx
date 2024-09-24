@@ -69,23 +69,23 @@ export default function ReservationForm() {
         </div>
       </div>
       <div
-        className="sm:px-16 px-6 flex lg:flex-row flex-col items-center lg:space-x-28 justify-center py-12 md:py-18">
-        <div className="w-fit max-w-lg my-8">
-          <Fieldset className="space-y-4 font-gothic text-slate-700">
+        className="flex w-full flex-col items-center justify-center px-6 py-10 space-y-6 sm:space-y-0 sm:px-16 md:py-18 lg:space-x-28 lg:flex-row">
+        <div className="flex w-full flex-col text-slate-700 scale-[0.95] max-w-[35rem] space-y-6 sm:scale-100">
+          <Fieldset className="w-full text-slate-700 space-y-4 font-gothic">
             <Legend className="text-4xl">網上預訂門票</Legend>
             <Field className="flex flex-col">
               <Label className="text-xl">中文全名</Label>
               <Input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
-                     className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5"/>
+                     className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
               {/[\u4e00-\u9fa5]/.test(name) && name !== "" ? null :
-                <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入中文姓名</p>}
+                <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入中文姓名</p>}
             </Field>
             <Field className="flex flex-col">
               <Label className="text-xl">流動電話（香港）</Label>
               <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
-                     className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5"/>
+                     className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
               {/^[0-9]{8}$/.test(phone) ? null :
-                <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入8位數字的電話號碼</p>}
+                <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
             </Field>
             <Field className="flex flex-col">
               <Label className="text-xl">數量 (1-100 張)</Label>
@@ -93,18 +93,19 @@ export default function ReservationForm() {
                 id="Quantity"
                 type="number"
                 onChange={(e) => setQuantity(Number(e.target.value))}
-                className="mt-2 bg-slate-300 rounded-2xl text-lg focus:outline-none px-4 py-2.5 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               {isNaN(quantity as number) || quantity < "1" || quantity > "100" ? (
-                <p className="text-slate-700 text-sm mt-1 opacity-70">請輸入1到100之間的數字</p>
+                <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入1到100之間的數字</p>
               ) : null}
             </Field>
-            <div className="flex sm:justify-between sm:space-y-0 space-y-4 sm:flex-row flex-col items-center">
-              <div className="flex flex-col sm:items-start items-center">
-                <p className="text-xl">門票價格: 每張 $200 </p>
-                <p className="text-xl">總金額 (港元結算)：${amount}</p>
+            <div
+              className="flex flex-col items-center space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
+              <div className="flex flex-col items-center sm:items-start">
+                <p className="text-2xl sm:text-lg">門票價格: 每張 $200 </p>
+                <p className="text-2xl sm:text-lg">總金額 (港元結算)：${amount}</p>
               </div>
-              <button type="button" onClick={submitForm} className="bg-slate-400 px-6 py-4 rounded-2xl text-2xl">
+              <button type="button" onClick={submitForm} className="rounded-2xl bg-slate-400 px-4 py-3 text-xl">
                 提交表格
               </button>
             </div>
