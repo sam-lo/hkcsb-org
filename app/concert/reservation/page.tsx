@@ -104,7 +104,7 @@ export default function ReservationForm() {
                 <p className="text-xl">門票價格: 每張 $200 </p>
                 <p className="text-xl">總金額 (港元結算)：${amount}</p>
               </div>
-              <button type="button" onChange={submitForm} className="bg-slate-400 px-6 py-4 rounded-2xl text-2xl">
+              <button type="button" onClick={submitForm} className="bg-slate-400 px-6 py-4 rounded-2xl text-2xl">
                 提交表格
               </button>
             </div>
