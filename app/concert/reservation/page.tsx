@@ -3,12 +3,97 @@ import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import hallwithaudience from "@/public/photo/hallwithaudience.jpg";
 import {Field, Fieldset, Input, Label, Legend} from "@headlessui/react";
+import {ArrowRightIcon} from "@heroicons/react/24/outline";
 
 export default function ReservationForm() {
+  return (
+    <div className="flex flex-col items-center">
+      <div
+        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
+        <Image src={hallwithaudience} alt="Concert Hall"
+               className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
+        <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
+          <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
+          <div className="flex flex-col text-slate-50 space-y-2 lg:space-y-4">
+            <p className="w-fit font-serif text-4xl font-bold lg:text-5xl">
+              音樂會與門票
+            </p>
+            <p className="w-fit text-lg opacity-80 lg:text-2xl">
+              了解即將舉行的音樂會
+            </p>
+          </div>
+          <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+        </div>
+      </div>
+      <div
+        className="flex flex-col items-center px-6 sm:space-y-12 space-y-8 sm:px-16 md:py-16 py-10 lg:space-x-28 lg:flex-row">
+        <TicketingDetails/>
+        <TicketingForm/>
+      </div>
+    </div>
+  );
+}
+
+function TicketingDetails() {
+
+  const Policies = [
+    "付款後任何情況將不設退款",
+    "演出如因天氣原因取消，將另行通知。",
+    "請妥善保管您的付款收據，遺失將不予補發",
+    "特殊需求的觀眾可提前與我們聯繫以獲得協助",
+    "如需購買團體票，請提前與我們聯繫"
+  ]
+
+  const Procedures = [
+    "於網上填寫個人資料以及購買數量",
+    "根據提供的付款方式及表格上顯示的金額進行付款",
+    "在清單底部上傳螢幕截圖等等付款證明然後按提交",
+    "我們將會在收到表格後的三個工作天內與您開立收據"
+  ]
+
+  return (
+    <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
+      <p className="text-4xl font-maru md:text-5xl">
+        網上預訂門票
+      </p>
+      <p className="opacity-80 sm:text-md md:text-2xl">
+        以網上方式預訂門票，請填寫以下表格。你的個人資料將會被妥善保密，並會在音樂會後銷毀。
+      </p>
+      <div className="flex flex-col space-y-2">
+        <p className="text-2xl font-maru md:text-3xl">條款及細則</p>
+        <ul className="list-inside list-disc text-md">
+          {Policies.map((policy) => (
+            <li key={policy}>{policy}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex flex-col space-y-2">
+        <p className="text-2xl font-maru md:text-3xl">購票程序</p>
+        <ul className="list-inside list-decimal text-md">
+          {Procedures.map((procedure) => (
+            <li key={procedure}>{procedure}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex space-x-2 group">
+        <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-2xl">
+          如您對購票有任何疑問，請隨時與我們聯絡。
+        </a>
+        <ArrowRightIcon
+          className="w-8 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
+      </div>
+    </div>
+  )
+}
+
+function TicketingForm() {
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [quantity, setQuantity] = useState<number | ''>('');
   const [amount, setAmount] = useState<number>(0);
+
+  const [isFormValid, setIsFormValid] = useState(false);
 
   // Update amount whenever quantity changes
   useEffect(() => {
@@ -18,6 +103,25 @@ export default function ReservationForm() {
       setAmount(0); // Reset amount if quantity is cleared
     }
   }, [quantity]);
+
+  useEffect(() => {
+    if (quantity) {
+      setAmount(200 * Number(quantity));
+    } else {
+      setAmount(0); // Reset amount if quantity is cleared
+    }
+
+    // Validate form fields
+    const isNameValid = /[\u4e00-\u9fa5]/.test(name) && name !== "";
+    const isPhoneValid = /^[0-9]{8}$/.test(phone);
+    const isQuantityValid = !isNaN(quantity as number) && Number(quantity) >= 1 && Number(quantity) <= 100;
+
+    if (isNameValid && isPhoneValid && isQuantityValid) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [name, phone, quantity]);
 
   const submitForm = async () => {
     const url = 'https://script.google.com/macros/s/AKfycbxOHBvTTouR_QHp6V4-qVAnzQ1BSYrUtyh66LIeHMQEiPAnu1QLOEcM1PRW1QuBnke4/exec'; // Google Apps Script Web App URL
@@ -50,68 +154,54 @@ export default function ReservationForm() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div
-        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
-        <Image src={hallwithaudience} alt="Concert Hall"
-               className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
-        <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
-          <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
-          <div className="flex flex-col text-slate-50 space-y-2 lg:space-y-4">
-            <p className="w-fit font-serif text-4xl font-bold lg:text-5xl">
-              音樂會與門票
-            </p>
-            <p className="w-fit text-lg opacity-80 lg:text-2xl">
-              了解即將舉行的音樂會
-            </p>
-          </div>
-          <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
-        </div>
-      </div>
-      <div
-        className="flex w-full flex-col items-center justify-center px-6 py-10 space-y-6 sm:space-y-0 sm:px-16 md:py-18 lg:space-x-28 lg:flex-row">
-        <div className="flex w-full flex-col text-slate-700 scale-[0.95] max-w-[35rem] space-y-6 sm:scale-100">
-          <Fieldset className="w-full text-slate-700 space-y-4 font-gothic">
-            <Legend className="text-4xl">網上預訂門票</Legend>
-            <Field className="flex flex-col">
-              <Label className="text-xl">中文全名</Label>
-              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
-                     className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
-              {/[\u4e00-\u9fa5]/.test(name) && name !== "" ? null :
-                <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入中文姓名</p>}
-            </Field>
-            <Field className="flex flex-col">
-              <Label className="text-xl">流動電話（香港）</Label>
-              <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
-                     className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
-              {/^[0-9]{8}$/.test(phone) ? null :
-                <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
-            </Field>
-            <Field className="flex flex-col">
-              <Label className="text-xl">數量 (1-100 張)</Label>
-              <Input
-                id="Quantity"
-                type="number"
-                onChange={(e) => setQuantity(Number(e.target.value))}
-                className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              />
-              {isNaN(quantity as number) || quantity < "1" || quantity > "100" ? (
-                <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入1到100之間的數字</p>
-              ) : null}
-            </Field>
-            <div
-              className="flex flex-col items-center space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
-              <div className="flex flex-col items-center sm:items-start">
-                <p className="text-2xl sm:text-lg">門票價格: 每張 $200 </p>
-                <p className="text-2xl sm:text-lg">總金額 (港元結算)：${amount}</p>
-              </div>
-              <button type="button" onClick={submitForm} className="rounded-2xl bg-slate-400 px-4 py-3 text-xl">
-                提交表格
-              </button>
+    <div
+      className="flex w-full flex-col items-center justify-center space-y-6 sm:space-y-0 md:py-18 lg:space-x-28 lg:flex-row">
+      <div className="flex w-full flex-col text-slate-700 max-w-[35rem] space-y-6 items-center">
+        <Fieldset className="w-full text-slate-700 space-y-4 font-maru">
+          <Legend className="text-4xl">預訂門票表格</Legend>
+          <Field className="flex flex-col">
+            <Label className="text-xl">中文全名</Label>
+            <Input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
+                   className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+            {/[\u4e00-\u9fa5]/.test(name) && name !== "" ? null :
+              <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入中文姓名</p>}
+          </Field>
+          <Field className="flex flex-col">
+            <Label className="text-xl">流動電話（香港）</Label>
+            <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
+                   className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+            {/^[0-9]{8}$/.test(phone) ? null :
+              <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
+          </Field>
+          <Field className="flex flex-col">
+            <Label className="text-xl">數量 (1-100 張)</Label>
+            <Input
+              id="Quantity"
+              type="number"
+              onChange={(e) => setQuantity(Number(e.target.value))}
+              className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            />
+            {isNaN(quantity as number) || quantity < "1" || quantity > "100" ? (
+              <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入1到100之間的數字</p>
+            ) : null}
+          </Field>
+          <div
+            className="flex flex-col py-4 items-center space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
+            <div className="flex flex-col items-center sm:items-start">
+              <p className="text-2xl sm:text-lg">門票價格: 每張 $200 </p>
+              <p className="text-2xl sm:text-lg">總金額 (港元結算)：${amount}</p>
             </div>
-          </Fieldset>
-        </div>
+            <button
+              type="button"
+              disabled={!isFormValid}
+              onClick={submitForm}
+              className={`rounded-2xl px-5 py-4 text-2xl ${isFormValid ? "bg-slate-400" : "bg-gray-400"}`}
+            >
+              提交表格
+            </button>
+          </div>
+        </Fieldset>
       </div>
     </div>
-  );
+  )
 }

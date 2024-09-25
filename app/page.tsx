@@ -54,7 +54,7 @@ export default function Home() {
                     <menu.icon className="w-14"/>
                     <ArrowRightIcon className="w-7 group-hover:-rotate-45 transition-all duration-300"/>
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col font-maru">
                     <p className="text-2xl">{menu.name}</p>
                     <p className="opacity-50">{menu.fullDescription}</p>
                   </div>

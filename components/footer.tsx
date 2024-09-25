@@ -21,7 +21,7 @@ export default function Footer () {
               </a>
             ))}
           </div>
-          <p className="font-gothic text-sm pt-4">
+          <p className="font-maru text-sm pt-4">
             ©2024 Carpe Symphonic Band. All Rights Reserved.
           </p>
         </div>

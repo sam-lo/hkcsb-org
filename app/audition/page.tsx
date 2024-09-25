@@ -8,7 +8,7 @@ import React, {useState} from "react";
 
 export default function Audition() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <div
         className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[17rem] lg:h-[28rem]">
         <Image src={hallwithpiano} alt="Concert Hall" className="h-full select-none object-cover brightness-[0.3]"/>
@@ -33,8 +33,9 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="flex flex-col sm:scale-100 scale-[0.92] items-center justify-center px-6  space-y-6 sm:space-y-0 sm:px-16 md:py-18 lg:space-x-28 lg:flex-row">
+        className="flex flex-col items-center px-6 sm:space-y-12 space-y-8 sm:px-16 md:py-16 py-10 lg:space-x-28 lg:flex-row">
         <AuditionDetails/>
+        <hr className="w-full lg:hidden border-2 border-red-800 px-10 brightness-125"/>
         <AuditionForm/>
       </div>
     </div>
@@ -44,7 +45,7 @@ export default function Audition() {
 function AuditionDetails() {
   return (
     <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
-      <p className="text-4xl font-gothic md:text-6xl">
+      <p className="text-4xl font-maru md:text-6xl">
         歡迎參加甄選
       </p>
       <p className="opacity-80 sm:text-lg md:text-2xl">
@@ -54,7 +55,7 @@ function AuditionDetails() {
             試音時，您將會被要求演奏一首自選曲目，以展示您的音樂技巧。我們亦會進行一些簡單的樂理測試，以確保您對音樂的理解程度。
           </p>*/}
       <div className="flex flex-col space-y-2">
-        <p className="text-2xl font-gothic md:text-3xl">試音要求</p>
+        <p className="text-2xl font-maru md:text-3xl">試音要求</p>
         <ul className="list-inside list-disc text-md">
           <li>16歲以上 (具有自理能力)</li>
           <li>若申請人未滿18歲需要家長或監護人同意</li>
@@ -63,7 +64,7 @@ function AuditionDetails() {
         </ul>
       </div>
       <div className="flex flex-col space-y-2">
-        <p className="text-2xl font-gothic md:text-3xl">甄選程序</p>
+        <p className="text-2xl font-maru md:text-3xl">甄選程序</p>
         <ul className="list-inside list-decimal text-md">
           <li>簡單面談</li>
           <li>演奏水平測試 (即場視譜及自選樂曲)</li>
@@ -104,7 +105,7 @@ function AuditionForm() {
 
   return (
     <div className="flex w-full flex-col text-slate-700 max-w-[35rem] space-y-6">
-      <Fieldset className="text-slate-700 space-y-4 font-gothic">
+      <Fieldset className="text-slate-700 space-y-4 font-maru">
         <Legend className="text-4xl">試音表格</Legend>
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
