@@ -4,6 +4,7 @@ import Image from "next/image";
 import hallwithaudience from "@/public/photo/hallwithaudience.jpg";
 import {Field, Fieldset, Input, Label, Legend} from "@headlessui/react";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
+import axios from "axios";
 
 export default function ReservationForm() {
   return (
@@ -26,7 +27,7 @@ export default function ReservationForm() {
         </div>
       </div>
       <div
-        className="flex flex-col items-center px-6 sm:space-y-12 space-y-8 sm:px-16 md:py-16 py-10 lg:space-x-28 lg:flex-row">
+        className="flex flex-col items-center px-6 py-10 space-y-8 sm:space-y-12 sm:px-16 md:py-16 lg:space-x-28 lg:flex-row">
         <TicketingDetails/>
         <TicketingForm/>
       </div>
@@ -92,18 +93,19 @@ function TicketingForm() {
   const [phone, setPhone] = useState('');
   const [quantity, setQuantity] = useState<number | ''>('');
   const [amount, setAmount] = useState<number>(0);
-
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Update amount whenever quantity changes
-  useEffect(() => {
-    if (quantity) {
-      setAmount(200 * Number(quantity));
-    } else {
-      setAmount(0); // Reset amount if quantity is cleared
-    }
-  }, [quantity]);
+  const [file, setFile] = useState<File | null>(null);
+  const [message, setMessage] = useState<string>('');
+  const [fileName, setFileName] = useState<string>('沒有檔案');
 
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = event.target.files?.[0] || null;
+    setFile(selectedFile);
+    setFileName(selectedFile ? selectedFile.name : '沒有檔案');
+  };
+
+  // Update amount whenever quantity changes
   useEffect(() => {
     if (quantity) {
       setAmount(200 * Number(quantity));
@@ -123,6 +125,27 @@ function TicketingForm() {
     }
   }, [name, phone, quantity]);
 
+  const handleUpload = async () => {
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await axios.post('https://script.google.com/macros/s/AKfycbwIgQGtSuPncGou6LQwVhe-1RCb35Vr4FfwU5OOcnHG1lsAjBFW3apEEfxcyqeCbz6u/exec', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        setMessage(response.data);
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        setMessage('Upload failed!');
+      }
+    } else {
+      setMessage('No file selected!');
+    }
+  };
+
   const submitForm = async () => {
     const url = 'https://script.google.com/macros/s/AKfycbxOHBvTTouR_QHp6V4-qVAnzQ1BSYrUtyh66LIeHMQEiPAnu1QLOEcM1PRW1QuBnke4/exec'; // Google Apps Script Web App URL
 
@@ -140,7 +163,7 @@ function TicketingForm() {
 
       const data = await response.json();
       if (data.result === 'success') {
-        alert('Form submitted successfully! We Will Contact You Soon.');
+        alert('你已成功提交表格，我們將盡快處理你的付款');
       } else {
         alert('Failed to submit: ' + data.error);
       }
@@ -155,8 +178,8 @@ function TicketingForm() {
 
   return (
     <div
-      className="flex w-full flex-col items-center justify-center space-y-6 sm:space-y-0 md:py-18 lg:space-x-28 lg:flex-row">
-      <div className="flex w-full flex-col text-slate-700 max-w-[35rem] space-y-6 items-center">
+      className="flex w-full flex-col items-center justify-center space-y-6 sm:space-y-0 lg:space-x-28 lg:flex-row">
+      <div className="flex w-full flex-col items-center text-slate-700 max-w-[35rem] space-y-6">
         <Fieldset className="w-full text-slate-700 space-y-4 font-maru">
           <Legend className="text-4xl">預訂門票表格</Legend>
           <Field className="flex flex-col">
@@ -185,16 +208,33 @@ function TicketingForm() {
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入1到100之間的數字</p>
             ) : null}
           </Field>
+          <Field className="flex">
+            <label
+              className="flex w-full mt-2 items-center overflow-clip rounded-2xl border border-slate-300">
+              <p
+                className={`w-full px-4 text-lg py-2.5 ${fileName === '沒有檔案' ? 'text-gray-900/40' : 'text-gray-900/80'}`}>
+                {fileName}
+              </p>
+              <input type="file" hidden onChange={handleFileChange}/>
+              <div
+                className="flex w-36 cursor-pointer items-center justify-center bg-slate-500 px-4 text-lg text-white shadow py-2.5 focus:outline-none">
+                選擇檔案
+              </div>
+            </label>
+          </Field>
           <div
-            className="flex flex-col py-4 items-center space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
+            className="flex flex-col items-center py-4 space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
             <div className="flex flex-col items-center sm:items-start">
               <p className="text-2xl sm:text-lg">門票價格: 每張 $200 </p>
               <p className="text-2xl sm:text-lg">總金額 (港元結算)：${amount}</p>
             </div>
             <button
-              type="button"
+              type="submit"
               disabled={!isFormValid}
-              onClick={submitForm}
+              onClick={() => {
+                submitForm();
+                handleUpload();
+              }}
               className={`rounded-2xl px-5 py-4 text-2xl ${isFormValid ? "bg-slate-400" : "bg-gray-400"}`}
             >
               提交表格
