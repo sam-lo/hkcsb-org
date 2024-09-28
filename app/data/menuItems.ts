@@ -33,7 +33,7 @@ export const menusItems = [
   },
   {
     id: 3,
-    name: "參加試音",
+    name: "加入樂團",
     description: "加入Carpe的大家庭",
     fullDescription: "如果你對音樂有熱情，歡迎參加我們的試音，我們歡迎各種樂器的樂手加入！",
     href: "/audition",

@@ -77,7 +77,7 @@ function AboutConductor() {
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
-          <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
+          <p className="w-fit font-serif text-4xl md:text-5xl">
             梁境佑 先生
           </p>
           <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
@@ -87,15 +87,15 @@ function AboutConductor() {
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col text-slate-700 opacity-80 space-y-4 text-md sm:text-lg">
           <p>
-            梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院(Royal
-            Northern College of Music)深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet
+            梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院（Royal
+            Northern College of Music）深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet
             Richardson學習短笛。在2015年，梁氏於香港國際音樂節西樂合奏小組獲得冠軍。除此之外，梁氏曾在不同大師班作示範生，包括：Marc
             Grauwels， Susan Milan， Adam Walker 及 Jennifer Hutchinson 等等。 畢業回港後，梁氏活躍於不同團體及機構合作，包括大館，TwoSet
-            Violin，歌手陳柏宇及組合Rubberband等。
+            Violin，歌手陳柏宇及搖滾組合Rubberband等。
           </p>
           <p>
             與此同時，梁氏在香港及英國深造期間分別跟隨羅保莙女士及Mr. Mark Heron 學習管樂團及管弦樂團指揮。
-            自2016年起擔任聖若瑟英文中學管樂團及2022年起擔任香港世紀管樂團助理指揮，並在2024年起擔任基督教宣道會宣基中學管樂團指揮一職。
+            自2016年起擔任聖若瑟英文中學管樂團及2022年起擔任香港世紀管樂團助理指揮，並在2024年起擔任基督教宣道會宣基中學管樂團指揮。
           </p>
         </div>
       </div>

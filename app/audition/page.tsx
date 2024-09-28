@@ -16,7 +16,7 @@ export default function Audition() {
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
-              參加試音
+              加入樂團
             </p>
             <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
               加入 Carpe Symphonic Band
@@ -47,7 +47,7 @@ function AuditionDetails() {
   return (
     <div className="flex flex-col text-slate-700 max-w-[38rem] space-y-6">
       <p className="text-4xl font-maru md:text-6xl">
-        歡迎參加甄選
+        歡迎參加試音
       </p>
       <p className="opacity-80 sm:text-lg md:text-2xl">
         我們誠邀對音樂有熱誠的樂手加入樂團，不論您是木管，銅管或敲擊樂手，我們都歡迎您參加試音。
@@ -72,6 +72,7 @@ function AuditionDetails() {
           <li>樂團坐奏測試</li>
         </ul>
       </div>
+      <p className="sm:text-lg md:text-xl">我們收到申請表格後會盡快聯絡您。</p>
       <div className="flex space-x-2 group">
         <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-xl">
           如果您對試音有任何疑問，歡迎與我們聯絡。
@@ -104,7 +105,7 @@ function AuditionForm() {
   return (
     <div className="flex w-full flex-col text-slate-700 max-w-[38rem] space-y-6">
       <Fieldset className="text-slate-700 space-y-4 font-maru">
-        <Legend className="text-4xl">甄選申請表格</Legend>
+        <Legend className="text-4xl">申請表格</Legend>
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
