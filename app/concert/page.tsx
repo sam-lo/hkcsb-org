@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hallwithaudience from "@/public/photo/hallwithaudience.jpg";
+import stand from "@/public/photo/stand.jpg";
 import poster from "@/public/photo/poster.png";
 import React from "react";
 import {CalendarDaysIcon} from "@heroicons/react/24/outline";
@@ -7,10 +7,10 @@ import {CalendarDaysIcon} from "@heroicons/react/24/outline";
 export default function Concert() {
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <div
         className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
-        <Image src={hallwithaudience} alt="Concert Hall"
+        <Image src={stand} alt="Concert Hall"
                className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
         <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -47,39 +47,22 @@ function ConcertDescription() {
       },
       {
         id: 2,
-        composer: "Steven Reineke",
-        piece: "Fate of the Gods",
-        duration: "9"
-      },
-      {
-        id: 3,
-        composer: "Gustav Holst",
-        piece: "Second Suite for Military Band in F major",
-        duration: "12"
-      },
-      {
-        id: 4,
         composer: "Itaru Sakai",
         piece: "The Seventh Night of July",
         duration: "9"
       },
       {
-        id: 5,
+        id: 3,
         composer: "George Gershwin / arr. Ferde Grofé",
         piece: "Rhapsody in Blue",
         duration: "18~"
       },
-      {
-        id: 6,
-        composer: "久石譲 / arr. 後藤 洋",
-        piece: "My Neighbor Totoro",
-        duration: "9"
-      }
     ]
   }
 
   return (
-    <div className="flex flex-col items-center justify-around px-6 py-12 space-y-8 lg:space-y-0 lg:flex-row lg:px-16">
+    <div
+      className="flex flex-col items-center justify-around px-6 py-12 lg:py-24 space-y-8 lg:space-y-0 lg:flex-row lg:px-16 max-w-7xl">
       <Image src={poster} alt="poster" className="h-fit lg:w-1/3"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>

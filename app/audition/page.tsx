@@ -10,7 +10,7 @@ export default function Audition() {
   return (
     <div className="flex flex-col items-center w-full">
       <div
-        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[17rem] lg:h-[28rem]">
+        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
         <Image src={hallwithpiano} alt="Concert Hall" className="h-full select-none object-cover brightness-[0.3]"/>
         <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -24,11 +24,12 @@ export default function Audition() {
           </div>
           <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="my-6 hidden w-64 select-none items-center justify-between rounded-3xl bg-slate-50/80 px-5 py-4 transition-all duration-300 group hover:bg-slate-50 lg:flex">
-            <p className="text-xl text-slate-700">
+             className="my-6 hidden w-64 select-none items-center bg-white justify-between rounded-3xl px-5 py-4 transition-all duration-300 group hover:bg-slate-800 lg:flex">
+            <p className="text-xl text-slate-700 group-hover:text-slate-50">
               即將舉行的音樂會
             </p>
-            <ArrowRightIcon className="w-8 text-slate-700 transition-all group-hover:-rotate-45"/>
+            <ArrowRightIcon
+              className="w-8 stroke-2 text-slate-700 group-hover:text-slate-50 transition-all group-hover:-rotate-45"/>
           </a>
         </div>
       </div>
@@ -44,12 +45,12 @@ export default function Audition() {
 
 function AuditionDetails() {
   return (
-    <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
+    <div className="flex flex-col text-slate-700 max-w-[38rem] space-y-6">
       <p className="text-4xl font-maru md:text-6xl">
         歡迎參加甄選
       </p>
       <p className="opacity-80 sm:text-lg md:text-2xl">
-        我們歡迎對音樂有熱誠的樂手參加試音，無論您是木管，銅管或敲擊樂手，我們都歡迎您參加試音。
+        我們誠邀對音樂有熱誠的樂手加入樂團，不論您是木管，銅管或敲擊樂手，我們都歡迎您參加試音。
       </p>
       {/*<p className="opacity-80 sm:text-lg md:text-2xl">
             試音時，您將會被要求演奏一首自選曲目，以展示您的音樂技巧。我們亦會進行一些簡單的樂理測試，以確保您對音樂的理解程度。
@@ -72,11 +73,11 @@ function AuditionDetails() {
         </ul>
       </div>
       <div className="flex space-x-2 group">
-        <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-2xl">
-          如果您對試音有任何疑問，請隨時與我們聯絡。
+        <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-xl">
+          如果您對試音有任何疑問，歡迎與我們聯絡。
         </a>
         <ArrowRightIcon
-          className="w-8 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
+          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
       </div>
     </div>
   )
@@ -96,17 +97,14 @@ function AuditionForm() {
     {id: 1, value: "Mr. 先生"},
     {id: 2, value: "Ms. 小姐"},
     {id: 3, value: "Mrs. 太太"},
-    {id: 4, value: "Dr. 博士"},
-    {id: 5, value: "Prof. 教授"},
-    {id: 6, value: "Sir. 爵士"}
   ]
 
   let WhatsAppLink = "https://wa.me/85254031510?text=申請人資料｜%0A中英文全名：" + chineseName + " " + englishName + "｜%0A稱謂：" + title + "｜%0A流動電話：" + phone + "｜%0A電郵地址：" + email
 
   return (
-    <div className="flex w-full flex-col text-slate-700 max-w-[35rem] space-y-6">
+    <div className="flex w-full flex-col text-slate-700 max-w-[38rem] space-y-6">
       <Fieldset className="text-slate-700 space-y-4 font-maru">
-        <Legend className="text-4xl">試音表格</Legend>
+        <Legend className="text-4xl">甄選申請表格</Legend>
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
@@ -135,7 +133,7 @@ function AuditionForm() {
           </div>
         </Field>
         <Field className="flex flex-col">
-          <Label className="text-xl">流動電話（香港）</Label>
+          <Label className="text-xl">流動電話號碼（香港）</Label>
           <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
                  className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[0-9]{8}$/.test(phone) ? null :

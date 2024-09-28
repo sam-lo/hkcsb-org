@@ -7,7 +7,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <div
         className="relative w-full overflow-hidden overflow-x-hidden selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
         <Image src={conducting} alt="Concert Hall"
@@ -24,23 +24,27 @@ export default function About() {
           </div>
           <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="my-6 hidden w-64 select-none items-center justify-between rounded-3xl bg-slate-50/80 px-5 py-4 transition-all duration-300 group hover:bg-slate-50 lg:flex">
-            <p className="text-xl text-slate-700">
+             className="my-6 hidden w-64 select-none items-center bg-white justify-between rounded-3xl px-5 py-4 transition-all duration-300 group hover:bg-slate-800 lg:flex">
+            <p className="text-xl text-slate-700 group-hover:text-slate-50">
               即將舉行的音樂會
             </p>
-            <ArrowRightIcon className="w-8 text-slate-700 transition-all group-hover:-rotate-45"/>
+            <ArrowRightIcon
+              className="w-8 stroke-2 text-slate-700 group-hover:text-slate-50 transition-all group-hover:-rotate-45"/>
           </a>
         </div>
       </div>
-      <AboutCarpe/>
-      <AboutConductor/>
+      <div className="flex flex-col space-y-12 py-24">
+        <AboutCarpe/>
+        <AboutConductor/>
+      </div>
     </div>
   )
 }
 
 function AboutCarpe() {
   return (
-    <div className="flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 py-12 lg:flex-row-reverse lg:px-16">
+    <div
+      className=" flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 lg:flex-row-reverse lg:px-16 max-w-[90rem]">
       <Image src={practice} alt="practice" className="h-fit shadow-black lg:w-2/5"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -48,20 +52,17 @@ function AboutCarpe() {
           <p className="w-fit font-serif text-2xl font-bold lg:text-4xl">
             Carpe Symphonic Band
           </p>
-          <p className="w-fit italic opacity-80 font-Comorant lg:text-2xl">
+          <p className="w-fit italic opacity-80 font-comorant lg:text-2xl">
             Aim High, Dream High
           </p>
         </div>
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col text-slate-700 opacity-80 space-y-4 text-md sm:text-lg">
           <p>
-            “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分利用眼前的每一刻。
-            然而，它的意義不僅僅是享受當下，更是強調在如今的每一次機會中，為未來的成長奠定基礎。
+            “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分珍惜眼前的每一刻。它的意義不僅僅是享受當下，更強調每一次的合奏，都是獨一無二的。
           </p>
           <p>
-            我們希望聚集一群對音樂有深厚造詣與追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。
-            在這個團體中，我們追求卓越，並珍惜每一次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。
-            我們相信，每一次的演出都是一次寶貴的經驗，每一次的練習都是對未來的投資。
+            我們希望聚集一群對音樂有深厚造詣與追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每一次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每一次演出都是寶貴的經驗，每一次練習都是對演出的投資。
           </p>
         </div>
       </div>
@@ -71,7 +72,7 @@ function AboutCarpe() {
 
 function AboutConductor() {
   return (
-    <div className="flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 py-12 lg:flex-row lg:px-16">
+    <div className="flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 lg:flex-row lg:px-16 max-w-[90rem]">
       <Image src={conductor} alt="Conductor" className="h-fit lg:w-1/3"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -93,8 +94,8 @@ function AboutConductor() {
             Violin，歌手陳柏宇及組合Rubberband等。
           </p>
           <p>
-            與此同時，梁氏在香港及英國深造期間分別跟隨白榮輝先生與羅保莙女士，及Mr. Mark Heron 學習管樂團及管弦樂團指揮。
-            自 2016 年起擔任聖若瑟英文中學管樂團及2022年起擔任香港世紀管樂團助理指揮，並在2024年起擔任基督教宣道會宣基中學管樂團指揮一職。
+            與此同時，梁氏在香港及英國深造期間分別跟隨羅保莙女士及Mr. Mark Heron 學習管樂團及管弦樂團指揮。
+            自2016年起擔任聖若瑟英文中學管樂團及2022年起擔任香港世紀管樂團助理指揮，並在2024年起擔任基督教宣道會宣基中學管樂團指揮一職。
           </p>
         </div>
       </div>

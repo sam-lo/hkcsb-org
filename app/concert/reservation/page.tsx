@@ -1,17 +1,16 @@
 "use client";
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
-import hallwithaudience from "@/public/photo/hallwithaudience.jpg";
+import stand from "@/public/photo/stand.jpg";
 import {Field, Fieldset, Input, Label, Legend} from "@headlessui/react";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
-import axios from "axios";
 
 export default function ReservationForm() {
   return (
     <div className="flex flex-col items-center">
       <div
         className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
-        <Image src={hallwithaudience} alt="Concert Hall"
+        <Image src={stand} alt="Concert Hall"
                className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
         <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -38,19 +37,21 @@ export default function ReservationForm() {
 function TicketingDetails() {
 
   const Policies = [
-    "付款後任何情況將不設退款",
-    "演出如因天氣原因取消，將另行通知。",
-    "請妥善保管您的付款收據，遺失將不予補發",
-    "特殊需求的觀眾可提前與我們聯繫以獲得協助",
-    "如需購買團體票，請提前與我們聯繫"
-  ]
+    "付款後不設退款。",
+    "是次音樂會不設劃位及優惠門票。",
+    "如表演當天下午兩時正香港天文台發出八號烈風或暴風信號，紅色或黑色暴雨警告，音樂會將會取消。",
+    "主辦單位保留更改活動節目的權利，恕不另行通知。",
+    "請妥善保管您的付款收據，遺失將不予補發。",
+    "有特殊需要的觀眾可提前與我們聯繫以獲得協助。"
+  ];
 
   const Procedures = [
-    "於網上填寫個人資料以及購買數量",
-    "根據提供的付款方式及表格上顯示的金額進行付款",
-    "在清單底部上傳螢幕截圖等等付款證明然後按提交",
-    "我們將會在收到表格後的三個工作天內與您開立收據"
-  ]
+    "於網上表格內填寫個人資料及購票數量。",
+    "根據提供的付款方式及表格上顯示的金額進行付款。",
+    "在預訂表格底部上載付款證明如螢幕截圖後按提交表格。",
+    "我們收到表格後三個工作天內將單據發送到閣下的登記電郵。",
+    "屆時請與場地前台工作人員核對身份領取門票。"
+  ];
 
   return (
     <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
@@ -77,11 +78,11 @@ function TicketingDetails() {
         </ul>
       </div>
       <div className="flex space-x-2 group">
-        <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-2xl">
-          如您對購票有任何疑問，請隨時與我們聯絡。
+        <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-xl">
+          如果您對試音有任何疑問，歡迎與我們聯絡。
         </a>
         <ArrowRightIcon
-          className="w-8 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
+          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
       </div>
     </div>
   )
@@ -96,14 +97,7 @@ function TicketingForm() {
   const [isFormValid, setIsFormValid] = useState(false);
 
   const [file, setFile] = useState<File | null>(null);
-  const [message, setMessage] = useState<string>('');
   const [fileName, setFileName] = useState<string>('沒有檔案');
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = event.target.files?.[0] || null;
-    setFile(selectedFile);
-    setFileName(selectedFile ? selectedFile.name : '沒有檔案');
-  };
 
   // Update amount whenever quantity changes
   useEffect(() => {
@@ -125,25 +119,10 @@ function TicketingForm() {
     }
   }, [name, phone, quantity]);
 
-  const handleUpload = async () => {
-    if (file) {
-      const formData = new FormData();
-      formData.append('file', file);
-
-      try {
-        const response = await axios.post('https://script.google.com/macros/s/AKfycbwIgQGtSuPncGou6LQwVhe-1RCb35Vr4FfwU5OOcnHG1lsAjBFW3apEEfxcyqeCbz6u/exec', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        });
-        setMessage(response.data);
-      } catch (error) {
-        console.error('Error uploading file:', error);
-        setMessage('Upload failed!');
-      }
-    } else {
-      setMessage('No file selected!');
-    }
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = event.target.files?.[0] || null;
+    setFile(selectedFile);
+    setFileName(selectedFile ? selectedFile.name : '沒有檔案');
   };
 
   const submitForm = async () => {
@@ -190,7 +169,7 @@ function TicketingForm() {
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入中文姓名</p>}
           </Field>
           <Field className="flex flex-col">
-            <Label className="text-xl">流動電話（香港）</Label>
+            <Label className="text-xl">流動電話號碼（香港）</Label>
             <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
                    className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/^[0-9]{8}$/.test(phone) ? null :
@@ -231,10 +210,7 @@ function TicketingForm() {
             <button
               type="submit"
               disabled={!isFormValid}
-              onClick={() => {
-                submitForm();
-                handleUpload();
-              }}
+              onClick={submitForm}
               className={`rounded-2xl px-5 py-4 text-2xl ${isFormValid ? "bg-slate-400" : "bg-gray-400"}`}
             >
               提交表格

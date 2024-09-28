@@ -15,14 +15,14 @@ export default function Footer () {
             {filteredItems.map((menu) => (
               <a key={menu.id} href={menu.href} className="hover:opacity-70 flex space-x-2">
                 <menu.icon className="w-8"/>
-                <p className="text-lg">
+                <p className="text-lg font-maru">
                   {menu.name}
                 </p>
               </a>
             ))}
           </div>
-          <p className="font-maru text-sm pt-4">
-            ©2024 Carpe Symphonic Band. All Rights Reserved.
+          <p className="font-sans text-md pt-4">
+            © 2024 Carpe Symphonic Band. All Rights Reserved.
           </p>
         </div>
       </div>
