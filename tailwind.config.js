@@ -10,7 +10,8 @@ module.exports = {
       sans: ["Noto Sans JP"],
       serif: ["Noto Serif JP"],
       maru: ["Kiwi Maru"],
-      comorant: ["Comorant"]
+      cinzel: ["Cinzel"],
+      calligraffitti: ["Calligraffitti"],
     },
     extend: {
     },

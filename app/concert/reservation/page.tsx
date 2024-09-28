@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import stand from "@/public/photo/stand.jpg";
-import {Field, Fieldset, Input, Label, Legend} from "@headlessui/react";
+import { Input } from "@headlessui/react";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
 
 export default function ReservationForm() {
@@ -79,7 +79,7 @@ function TicketingDetails() {
       </div>
       <div className="flex space-x-2 group">
         <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-xl">
-          如果您對試音有任何疑問，歡迎與我們聯絡。
+          如果您對票務上有任何疑問，請與我們聯絡。
         </a>
         <ArrowRightIcon
           className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
@@ -132,7 +132,7 @@ function TicketingForm() {
 
     const formData = new URLSearchParams();
     formData.append('中文全名', name);
-    formData.append('電話號碼', phone);
+    formData.append('流動電話號碼', phone);
     formData.append('電郵地址', email);
     formData.append('數量', String(quantity));
     formData.append('金額', String(amount));
@@ -162,31 +162,31 @@ function TicketingForm() {
     <div
       className="flex w-full flex-col items-center justify-center space-y-6 sm:space-y-0 lg:space-x-28 lg:flex-row">
       <div className="flex w-full flex-col items-center text-slate-700 max-w-[35rem] space-y-6">
-        <Fieldset className="w-full text-slate-700 space-y-4 font-maru">
-          <Legend className="text-4xl">預訂門票表格</Legend>
-          <Field className="flex flex-col">
-            <Label className="text-xl">中文全名</Label>
-            <Input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
+        <form className="w-full text-slate-700 space-y-4 font-maru">
+          <legend className="text-4xl">預訂門票表格</legend>
+          <div className="flex flex-col">
+            <label className="text-xl">中文全名</label>
+            <input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
                    className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/[\u4e00-\u9fa5]/.test(name) && name !== "" ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入中文姓名</p>}
-          </Field>
-          <Field className="flex flex-col">
-            <Label className="text-xl">流動電話號碼（香港）</Label>
+          </div>
+          <div className="flex flex-col">
+            <label className="text-xl">流動電話號碼（香港）</label>
             <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
                    className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/^[0-9]{8}$/.test(phone) ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
-          </Field>
-          <Field className="flex flex-col">
-            <Label className="text-xl">電郵地址</Label>
+          </div>
+          <div className="flex flex-col">
+            <label className="text-xl">電郵地址</label>
             <Input id="Email" onChange={(e) => setEmail(e.target.value)} type="text"
                    className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入正確的電郵地址</p>}
-          </Field>
-          <Field className="flex flex-col">
-            <Label className="text-xl">數量 (1-100 張)</Label>
+          </div>
+          <div className="flex flex-col">
+            <label className="text-xl">數量 (1-100 張)</label>
             <Input
               id="Quantity"
               type="number"
@@ -196,8 +196,8 @@ function TicketingForm() {
             {isNaN(quantity as number) || quantity < "1" || quantity > "100" ? (
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入1到100之間的數字</p>
             ) : null}
-          </Field>
-          <Field className="flex">
+          </div>
+          <div className="flex">
             <label
               className="flex w-full mt-2 items-center overflow-clip rounded-2xl border border-slate-300">
               <p
@@ -206,11 +206,11 @@ function TicketingForm() {
               </p>
               <input type="file" hidden onChange={handleFileChange}/>
               <div
-                className="flex w-36 cursor-pointer items-center justify-center bg-slate-500 px-4 text-lg text-white shadow py-2.5 focus:outline-none">
+                className="flex w-36 cursor-pointer items-center justify-center bg-slate-400 px-4 text-lg text-slate-700 shadow py-2.5 focus:outline-none">
                 選擇檔案
               </div>
             </label>
-          </Field>
+          </div>
           <div
             className="flex flex-col items-center py-4 space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
             <div className="flex flex-col items-center sm:items-start">
@@ -221,12 +221,12 @@ function TicketingForm() {
               type="submit"
               disabled={!isFormValid}
               onClick={submitForm}
-              className={`rounded-2xl px-5 py-4 text-2xl ${isFormValid ? "bg-slate-400" : "bg-gray-400"}`}
+              className={`rounded-2xl px-5 py-4 text-slate-50 text-2xl ${isFormValid ? "bg-slate-500" : "bg-gray-400"}`}
             >
               提交表格
             </button>
           </div>
-        </Fieldset>
+        </form>
       </div>
     </div>
   )

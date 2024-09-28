@@ -1,6 +1,6 @@
 import Image from "next/image";
 import envelope from "@/public/photo/envelope.jpg";
-import {ArrowRightIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, PhoneIcon} from "@heroicons/react/24/outline";
+import {ArrowRightIcon, CameraIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, PhoneIcon} from "@heroicons/react/24/outline";
 import React from "react";
 
 export default function Contact() {
@@ -26,6 +26,13 @@ export default function Contact() {
       text: "www.hkcsb.org",
       decription: "官方網站",
       href: "https://www.hkcsb.org",
+    },
+    {
+      id: 4,
+      icon: CameraIcon,
+      text: "carpe_symband",
+      decription: "社交媒體",
+      href: "/contact"
     }
   ]
 
@@ -62,7 +69,7 @@ export default function Contact() {
               歡迎隨時聯絡我們
             </p>
             <p className="text-lg opacity-80 md:text-2xl">
-              您的意見對我們來說十分寶貴。我們樂於接受新的想法、建議、查詢或合作，您可以透過以下方式聯絡我們。
+              您的寶貴意見對我們來說十分重要。我們樂於接受新的想法、建議、查詢或合作，您可以透過以下方式與我們聯絡。
             </p>
           </div>
           <div className="flex flex-col py-8 text-lg text-slate-700 opacity-80 space-y-4 md:text-2xl">

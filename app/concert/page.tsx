@@ -67,7 +67,7 @@ function ConcertDescription() {
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
-          <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
+          <p className="w-fit font-cinzel text-4xl  md:text-5xl">
             {Details.title}
           </p>
           <p className="w-fit text-sm opacity-80 md:text-xl">

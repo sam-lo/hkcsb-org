@@ -2,7 +2,7 @@
 import Image from "next/image";
 import {Field, Fieldset, Input, Label, Legend, Select} from '@headlessui/react'
 import clsx from 'clsx';
-import hallwithpiano from "@/public/photo/hallwithpiano.jpg";
+import scorewithconduct from "@/public/photo/scorewithconduct.jpg";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
 import React, {useState} from "react";
 
@@ -11,7 +11,7 @@ export default function Audition() {
     <div className="flex flex-col items-center w-full">
       <div
         className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
-        <Image src={hallwithpiano} alt="Concert Hall" className="h-full select-none object-cover brightness-[0.3]"/>
+        <Image src={scorewithconduct} alt="Concert Hall" className="h-full select-none object-cover brightness-[0.3]"/>
         <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">

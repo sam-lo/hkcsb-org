@@ -11,7 +11,7 @@ export default function About() {
       <div
         className="relative w-full overflow-hidden overflow-x-hidden selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
         <Image src={conducting} alt="Concert Hall"
-               className="h-full select-none overflow-y-visible object-cover brightness-[0.3] grayscale-[0.6] lg:translate-y-60"/>
+               className="h-full select-none overflow-y-visible object-cover brightness-[0.3] grayscale-[0.6] w-full lg:translate-y-60"/>
         <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
@@ -49,10 +49,10 @@ function AboutCarpe() {
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col text-slate-700 space-y-2 lg:space-y-4">
-          <p className="w-fit font-serif text-2xl font-bold lg:text-4xl">
+          <p className="w-fit font-cinzel text-2xl lg:text-5xl">
             Carpe Symphonic Band
           </p>
-          <p className="w-fit italic opacity-80 font-comorant lg:text-2xl">
+          <p className="w-fit font-calligraffitti opacity-80 font-nothing lg:text-2xl">
             Aim High, Dream High
           </p>
         </div>
@@ -62,7 +62,7 @@ function AboutCarpe() {
             “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分珍惜眼前的每一刻。它的意義不僅僅是享受當下，更強調每一次的合奏，都是獨一無二的。
           </p>
           <p>
-            我們希望聚集一群對音樂有深厚造詣與追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每一次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每一次演出都是寶貴的經驗，每一次練習都是對演出的投資。
+            我們希望聚集一群對音樂有深厚造詣與追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每次演出都是寶貴的經驗，每次練習都是對演出的投資。
           </p>
         </div>
       </div>
@@ -89,7 +89,7 @@ function AboutConductor() {
           <p>
             梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院(Royal
             Northern College of Music)深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet
-            Richardson學習短笛。在二零一五年，梁氏於香港國際音樂節西樂合奏小組獲得冠軍。除此之外，梁氏曾在不同大師班作示範生，包括：Marc
+            Richardson學習短笛。在2015年，梁氏於香港國際音樂節西樂合奏小組獲得冠軍。除此之外，梁氏曾在不同大師班作示範生，包括：Marc
             Grauwels， Susan Milan， Adam Walker 及 Jennifer Hutchinson 等等。 畢業回港後，梁氏活躍於不同團體及機構合作，包括大館，TwoSet
             Violin，歌手陳柏宇及組合Rubberband等。
           </p>
