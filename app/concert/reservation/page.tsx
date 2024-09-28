@@ -39,7 +39,7 @@ function TicketingDetails() {
   const Policies = [
     "付款後不設退款。",
     "是次音樂會不設劃位及優惠門票。",
-    "如表演當天下午兩時正香港天文台發出八號烈風或暴風信號，紅色或黑色暴雨警告，音樂會將會取消。",
+    "如表演當天遇上惡劣天氣，我們將會在社交媒體另行通知。",
     "主辦單位保留更改活動節目的權利，恕不另行通知。",
     "請妥善保管您的付款收據，遺失將不予補發。",
     "有特殊需要的觀眾可提前與我們聯繫以獲得協助。"
@@ -92,6 +92,7 @@ function TicketingForm() {
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [quantity, setQuantity] = useState<number | ''>('');
   const [amount, setAmount] = useState<number>(0);
   const [isFormValid, setIsFormValid] = useState(false);
@@ -110,14 +111,15 @@ function TicketingForm() {
     // Validate form fields
     const isNameValid = /[\u4e00-\u9fa5]/.test(name) && name !== "";
     const isPhoneValid = /^[0-9]{8}$/.test(phone);
+    const isEmailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
     const isQuantityValid = !isNaN(quantity as number) && Number(quantity) >= 1 && Number(quantity) <= 100;
 
-    if (isNameValid && isPhoneValid && isQuantityValid) {
+    if (isNameValid && isPhoneValid && isEmailValid && isQuantityValid) {
       setIsFormValid(true);
     } else {
       setIsFormValid(false);
     }
-  }, [name, phone, quantity]);
+  }, [name, phone, quantity, email]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0] || null;
@@ -131,6 +133,7 @@ function TicketingForm() {
     const formData = new URLSearchParams();
     formData.append('中文全名', name);
     formData.append('電話號碼', phone);
+    formData.append('電郵地址', email);
     formData.append('數量', String(quantity));
     formData.append('金額', String(amount));
 
@@ -174,6 +177,13 @@ function TicketingForm() {
                    className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/^[0-9]{8}$/.test(phone) ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
+          </Field>
+          <Field className="flex flex-col">
+            <Label className="text-xl">電郵地址</Label>
+            <Input id="Email" onChange={(e) => setEmail(e.target.value)} type="text"
+                   className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+            {/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ? null :
+              <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入正確的電郵地址</p>}
           </Field>
           <Field className="flex flex-col">
             <Label className="text-xl">數量 (1-100 張)</Label>
