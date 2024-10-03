@@ -37,12 +37,12 @@ export default function Home() {
               </p>
             </div>
             <a href="/concert"
-               className="my-6 hidden w-64 select-none items-center justify-between rounded-3xl bg-white px-5 py-4 transition-all duration-300 group hover:bg-slate-800 lg:flex">
-              <p className="text-xl text-slate-700 group-hover:text-slate-50">
+               className="my-8 hidden w-64 select-none items-center justify-between rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+              <p className="text-xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>
               <ArrowRightIcon
-                className="w-8 stroke-2 text-slate-700 transition-all group-hover:-rotate-45 group-hover:text-slate-50"/>
+                className="w-8 stroke-2 text-white transition-all group-hover:-rotate-45 group-hover:text-red-950"/>
             </a>
           </div>
         </div>

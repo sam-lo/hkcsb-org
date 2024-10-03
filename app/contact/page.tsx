@@ -41,8 +41,11 @@ export default function Contact() {
       <div className="flex flex-col items-center">
         <div
           className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
-          <Image src={envelope} alt="Concert Hall" className="h-full select-none object-cover brightness-[0.3] grayscale"/>
-          <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+          <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
+          <Image src={envelope} alt="Concert Hall"
+                 className="h-full select-none object-cover brightness-[0.5] grayscale"/>
+          <div
+            className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
             <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
             <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
               <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
@@ -54,11 +57,12 @@ export default function Contact() {
             </div>
             <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
             <a href="/concert"
-               className="my-6 hidden w-64 select-none items-center bg-white justify-between rounded-3xl px-5 py-4 transition-all duration-300 group hover:bg-slate-800 lg:flex">
-              <p className="text-xl text-slate-700 group-hover:text-slate-50">
+               className="my-5 hidden w-64 select-none items-center justify-between rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+              <p className="text-xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>
-              <ArrowRightIcon className="w-8 stroke-2 text-slate-700 group-hover:text-slate-50 transition-all group-hover:-rotate-45"/>
+              <ArrowRightIcon
+                className="w-8 stroke-2 text-white transition-all group-hover:-rotate-45 group-hover:text-red-950"/>
             </a>
           </div>
         </div>

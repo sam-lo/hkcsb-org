@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Noto Sans HK"],
-      serif: ["Klee One"],
+      serif: ["Noto Serif HK"],
       maru: ["Kiwi Maru"],
       cinzel: ["Cinzel"],
       calligraffitti: ["Calligraffitti"],
