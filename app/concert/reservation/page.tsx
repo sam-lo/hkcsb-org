@@ -2,10 +2,12 @@
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import stand from "@/public/photo/stand.jpg";
-import { Input } from "@headlessui/react";
+import {Input} from "@headlessui/react";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
+import {cloudinaryConfig} from '@/config/cloudinaryConfig';
 
 export default function ReservationForm() {
+
   return (
     <div className="flex flex-col items-center">
       <div
@@ -27,7 +29,7 @@ export default function ReservationForm() {
       </div>
       <div
         className="flex flex-col items-center px-6 py-10 space-y-8 sm:space-y-12 sm:px-16 md:py-16 lg:space-x-28 lg:flex-row">
-        <TicketingDetails/>
+        <TicketingDetails />
         <TicketingForm/>
       </div>
     </div>
@@ -99,6 +101,7 @@ function TicketingForm() {
 
   const [file, setFile] = useState<File | null>(null);
   const [fileName, setFileName] = useState<string>('沒有檔案');
+  const [uploading, setUploading] = useState(false);
 
   // Update amount whenever quantity changes
   useEffect(() => {
@@ -127,8 +130,44 @@ function TicketingForm() {
     setFileName(selectedFile ? selectedFile.name : '沒有檔案');
   };
 
-  const submitForm = async () => {
-    const url = 'https://script.google.com/macros/s/AKfycbxOHBvTTouR_QHp6V4-qVAnzQ1BSYrUtyh66LIeHMQEiPAnu1QLOEcM1PRW1QuBnke4/exec'; // Google Apps Script Web App URL
+  const uploadFileToCloudinary = async (file: File, newFileName: string) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'PAYMENT_PROOF');
+    formData.append('public_id', encodeURIComponent(newFileName)); // Encode the new file name
+
+    setUploading(true);
+    try {
+      const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudinaryConfig.cloud_name}/upload`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+      setUploading(false);
+      return data.secure_url;
+    } catch (error) {
+      setUploading(false);
+      console.error('Error uploading file:', error);
+      throw error;
+    }
+  };
+
+  const submitForm = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    let fileUrl = '';
+    if (file) {
+      try {
+        const newFileName = `${name}-${phone}`; // Create a new file name using the form name and current timestamp
+        fileUrl = await uploadFileToCloudinary(file, newFileName);
+      } catch (error) {
+        alert('檔案上載失敗，請再試一次或聯絡我們。');
+        return;
+      }
+    }
+
+    const url = 'https://script.google.com/macros/s/AKfycbzMm2R6f5ZwRLNn2UlcAotgg5dqXPMaTfd2J10g5ErmtLD-PxfQ66g8RSCsU_HnK6OZRw/exec'; // Google Apps Script Web App URL
 
     const formData = new URLSearchParams();
     formData.append('中文全名', name);
@@ -136,23 +175,35 @@ function TicketingForm() {
     formData.append('電郵地址', email);
     formData.append('數量', String(quantity));
     formData.append('金額', String(amount));
+    formData.append('付款證明', fileUrl);
 
     try {
       const response = await fetch(url, {
         method: 'POST',
         body: formData,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
       });
+
+      if (!response.ok) {
+        console.error(`HTTP error! status: ${response.status}`);
+        alert(`HTTP error! status: ${response.status}`);
+        return;
+      }
 
       const data = await response.json();
       if (data.result === 'success') {
-        alert('你已成功提交表格，我們將盡快處理你的付款');
+        alert('你已成功提交表格，我們將盡快聯絡你');
       } else {
-        alert('Failed to submit: ' + data.error);
+        alert('遇上未知未能提交 ' + data.error);
       }
     } catch (error: unknown) {
       if (error instanceof Error) {
+        console.error('Error:', error.message);
         alert('Error: ' + error.message);
       } else {
+        console.error('An unknown error occurred.');
         alert('An unknown error occurred.');
       }
     }
@@ -160,7 +211,7 @@ function TicketingForm() {
 
   return (
     <div
-      className="flex w-full flex-col items-center justify-center space-y-6 sm:space-y-0 lg:space-x-28 lg:flex-row">
+      className="flex flex-col items-center justify-center space-y-6 sm:space-y-0 lg:space-x-28 lg:flex-row">
       <div className="flex w-full flex-col items-center text-slate-700 max-w-[35rem] space-y-6">
         <form className="w-full text-slate-700 space-y-4 font-maru">
           <legend className="text-4xl">預訂門票表格</legend>
@@ -213,9 +264,9 @@ function TicketingForm() {
           </div>
           <div
             className="flex flex-col items-center py-4 space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
-            <div className="flex flex-col items-center sm:items-start">
-              <p className="text-2xl sm:text-lg">門票價格: 每張 $200 </p>
-              <p className="text-2xl sm:text-lg">總金額 (港元結算)：${amount}</p>
+            <div className="flex flex-col items-center sm:items-start text-2xl sm:text-lg">
+              <p>門票價格: 每張 $200 </p>
+              <p>總金額 (港元結算)：${amount}</p>
             </div>
             <button
               type="submit"

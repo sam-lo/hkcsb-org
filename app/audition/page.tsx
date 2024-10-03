@@ -34,7 +34,7 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="flex flex-col items-center px-6 sm:space-y-12 space-y-8 sm:px-16 md:py-16 py-10 lg:space-x-28 lg:flex-row">
+        className="flex flex-col w-full items-center px-6 sm:space-y-12 space-y-8 md:py-24 py-10 lg:space-x-28 sm:px-16 lg:flex-row max-w-7xl">
         <AuditionDetails/>
         <hr className="w-full lg:hidden border-2 border-red-800 px-10 brightness-125"/>
         <AuditionForm/>
@@ -45,7 +45,7 @@ export default function Audition() {
 
 function AuditionDetails() {
   return (
-    <div className="flex flex-col text-slate-700 max-w-[38rem] space-y-6">
+    <div className="flex flex-col text-slate-700 space-y-6">
       <p className="text-4xl font-maru md:text-6xl">
         歡迎參加試音
       </p>
@@ -90,9 +90,8 @@ function AuditionForm() {
   const [englishName, setEnglishName] = useState("")
   const [title, setTitle] = useState("Mr. 先生")
   const [phone, setPhone] = useState("")
-  const [email, setEmail] = useState("")
 
-  const validation = (/[\u4e00-\u9fa5]/.test(chineseName) && /^[a-zA-Z\s]*$/.test(englishName) && /^[0-9]{8}$/.test(phone) && /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))
+  const validation = (/[\u4e00-\u9fa5]/.test(chineseName) && /^[a-zA-Z\s]*$/.test(englishName) && /^[0-9]{8}$/.test(phone))
 
   const titleOptions = [
     {id: 1, value: "Mr. 先生"},
@@ -100,10 +99,51 @@ function AuditionForm() {
     {id: 3, value: "Mrs. 太太"},
   ]
 
-  let WhatsAppLink = "https://wa.me/85254031510?text=申請人資料｜%0A中英文全名：" + chineseName + " " + englishName + "｜%0A稱謂：" + title + "｜%0A流動電話：" + phone + "｜%0A電郵地址：" + email
+  const submitForm = async (event: React.FormEvent) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    const url = 'https://script.google.com/macros/s/AKfycbwba8jQ4nnxpsRmoe-J1nQZlaQJE5Mq1SFSX3rGyKOsMdv7mQBfKu_i5oFYYmy_UsKimg/exec'; // Google Apps Script Web App URL
+
+    const formData = new URLSearchParams();
+    formData.append('中文全名', chineseName);
+    formData.append('英文全名', englishName);
+    formData.append('稱謂', title);
+    formData.append('電話號碼', phone);
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      });
+
+      if (!response.ok) {
+        console.error(`HTTP error! status: ${response.status}`);
+        alert(`HTTP error! status: ${response.status}`);
+        return;
+      }
+
+      const data = await response.json();
+      if (data.result === 'success') {
+        alert('你已成功提交表格，我們將盡快聯絡你');
+      } else {
+        alert('Failed to submit: ' + data.error);
+      }
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Error:', error.message);
+        alert('Error: ' + error.message);
+      } else {
+        console.error('An unknown error occurred.');
+        alert('An unknown error occurred.');
+      }
+    }
+  };
 
   return (
-    <div className="flex w-full flex-col text-slate-700 max-w-[38rem] space-y-6">
+    <div className="flex w-full flex-col text-slate-700 space-y-6">
       <Fieldset className="text-slate-700 space-y-4 font-maru">
         <Legend className="text-4xl">申請表格</Legend>
         <Field className="flex flex-col">
@@ -140,16 +180,11 @@ function AuditionForm() {
           {/^[0-9]{8}$/.test(phone) ? null :
             <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
         </Field>
-        <Field className="flex flex-col">
-          <Label className="text-xl">電郵地址</Label>
-          <Input id="Email" onChange={(e) => setEmail(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
-          {/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ? null :
-            <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入正確的電郵地址</p>}
-        </Field>
         <Field className="flex flex-col items-end py-3 space-y-1">
-          <a href={WhatsAppLink}
-             className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "pointer-events-none grayscale cursor-not-allowed")}>提交申請</a>
+          <button onClick={submitForm} disabled={!validation}
+             className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "pointer-events-none grayscale cursor-not-allowed")}>
+            提交申請
+          </button>
           <div className="text-slate-700">
             {validation ? null : <p className="text-center text-sm opacity-70">請填寫正確的資料</p>}
           </div>

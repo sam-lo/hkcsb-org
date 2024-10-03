@@ -9,10 +9,11 @@ export default function Concert() {
   return (
     <div className="flex flex-col items-center">
       <div
-        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
+        className=" relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[25rem]">
+        {/*<div className="absolute z-10 inset-0 bg-gradient-to-r from-red-800/40 to-transparent"/>*/}
         <Image src={stand} alt="Concert Hall"
                className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
-        <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
+        <div className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-slate-50 space-y-2 lg:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold lg:text-5xl">
@@ -62,12 +63,12 @@ function ConcertDescription() {
 
   return (
     <div
-      className="flex flex-col items-center justify-around px-6 py-12 lg:py-24 space-y-8 lg:space-y-0 lg:flex-row lg:px-16 max-w-7xl">
+      className="flex flex-col w-full items-center justify-around px-6 py-12 lg:py-24 space-y-8 lg:space-y-0 lg:flex-row max-w-7xl">
       <Image src={poster} alt="poster" className="h-fit lg:w-1/3"/>
-      <div className="flex h-fit flex-col lg:w-1/2">
+      <div className="flex h-full flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
-          <p className="w-fit font-cinzel text-4xl  md:text-5xl">
+          <p className="w-fit font-cinzel text-4xl md:text-5xl">
             {Details.title}
           </p>
           <p className="w-fit text-sm opacity-80 md:text-xl">

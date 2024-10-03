@@ -48,9 +48,9 @@ export default function Home() {
 
         {/* Menu Items */}
 
-        <div className="grid grid-cols-1 gap-8 px-6 py-16 sm:px-16 md:grid-cols-2 2xl:grid-cols-4">
+        <div className="flex flex-wrap gap-8 px-6 py-16 justify-center sm:px-16">
           {filteredItems.map((menu) => (
-            <a href={menu.href} key={menu.id} className="w-96">
+            <a href={menu.href} key={menu.id} className="sm:w-96">
               <div
                 className="flex w-full flex-col rounded-3xl bg-slate-800 p-6 text-white transition-all duration-300 group space-y-6 hover:-translate-y-2 hover:-rotate-1 hover:bg-red-900 hover:shadow-2xl hover:shadow-slate-900/80">
                 <div className="flex items-start justify-between">
