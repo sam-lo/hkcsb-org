@@ -65,7 +65,7 @@ export default function Contact() {
         <div
           className="flex flex-col items-start justify-center px-6 py-12 sm:px-16 md:py-24 xl:space-x-28 xl:flex-row max-w-7xl xl:items-center">
           <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
-            <p className="text-4xl font-maru md:text-6xl">
+            <p className="text-4xl font-serif font-medium md:text-6xl">
               歡迎隨時聯絡我們
             </p>
             <p className="text-lg opacity-80 md:text-2xl">

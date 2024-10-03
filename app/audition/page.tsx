@@ -15,7 +15,7 @@ export default function Audition() {
         <div className="absolute inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
-            <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
+            <p className="w-fit font-serif font-medium text-4xl font-bold md:text-5xl">
               加入樂團
             </p>
             <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
@@ -46,17 +46,17 @@ export default function Audition() {
 function AuditionDetails() {
   return (
     <div className="flex flex-col text-slate-700 space-y-6">
-      <p className="text-4xl font-maru md:text-6xl">
+      <p className="text-4xl font-serif font-medium md:text-6xl">
         歡迎參加試音
       </p>
-      <p className="opacity-80 sm:text-lg md:text-2xl">
+      <p className="opacity-80 sm:text-lg md:text-xl">
         我們誠邀對音樂有熱誠的樂手加入樂團，不論您是木管，銅管或敲擊樂手，我們都歡迎您參加試音。
       </p>
       {/*<p className="opacity-80 sm:text-lg md:text-2xl">
             試音時，您將會被要求演奏一首自選曲目，以展示您的音樂技巧。我們亦會進行一些簡單的樂理測試，以確保您對音樂的理解程度。
           </p>*/}
       <div className="flex flex-col space-y-2">
-        <p className="text-2xl font-maru md:text-3xl">試音要求</p>
+        <p className="text-2xl font-serif font-medium md:text-3xl">申請者要求</p>
         <ul className="list-inside list-disc text-md">
           <li>16歲以上 (具有自理能力)</li>
           <li>若申請人未滿18歲需要家長或監護人同意</li>
@@ -65,7 +65,7 @@ function AuditionDetails() {
         </ul>
       </div>
       <div className="flex flex-col space-y-2">
-        <p className="text-2xl font-maru md:text-3xl">甄選程序</p>
+        <p className="text-2xl font-serif font-medium md:text-3xl">試音程序</p>
         <ul className="list-inside list-decimal text-md">
           <li>簡單面談</li>
           <li>演奏水平測試 (即場視譜及自選樂曲)</li>
@@ -144,7 +144,7 @@ function AuditionForm() {
 
   return (
     <div className="flex w-full flex-col text-slate-700 space-y-6">
-      <Fieldset className="text-slate-700 space-y-4 font-maru">
+      <Fieldset className="text-slate-700 space-y-4 font-serif font-medium">
         <Legend className="text-4xl">申請表格</Legend>
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
