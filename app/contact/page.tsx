@@ -57,7 +57,7 @@ export default function Contact() {
             </div>
             <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
             <a href="/concert"
-               className="my-5 hidden w-64 select-none items-center justify-between rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+               className="my-5 hidden w-64 select-none items-center justify-between outline-white rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
               <p className="text-xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>

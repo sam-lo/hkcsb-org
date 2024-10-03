@@ -37,7 +37,7 @@ export default function Home() {
               </p>
             </div>
             <a href="/concert"
-               className="my-8 hidden w-64 select-none items-center justify-between rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+               className="my-8 hidden w-64 select-none items-center justify-between outline-white rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
               <p className="text-xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>

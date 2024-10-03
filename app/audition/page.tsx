@@ -25,12 +25,12 @@ export default function Audition() {
           </div>
           <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="my-8 hidden w-64 select-none items-center justify-between rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+             className="my-5 hidden w-64 select-none items-center justify-between rounded-3xl outline outline-white px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
             <p className="text-xl text-white group-hover:text-red-950">
               即將舉行的音樂會
             </p>
             <ArrowRightIcon
-              className="my-5 stroke-2 text-white transition-all group-hover:-rotate-45 group-hover:text-red-950"/>
+              className="w-8 stroke-2 text-white transition-all group-hover:-rotate-45 group-hover:text-red-950"/>
           </a>
         </div>
       </div>
