@@ -7,11 +7,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["Noto Sans JP"],
-      serif: ["Noto Serif JP"],
+      sans: ["Noto Sans HK"],
+      serif: ["Klee One"],
       maru: ["Kiwi Maru"],
       cinzel: ["Cinzel"],
       calligraffitti: ["Calligraffitti"],
+
     },
     extend: {
     },
