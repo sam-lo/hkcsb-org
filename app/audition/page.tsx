@@ -147,14 +147,14 @@ function AuditionForm() {
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                 className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
           {/[\u4e00-\u9fa5]/.test(chineseName) && chineseName !== "" ? null :
             <p className="mt-1 text-sm text-slate-700 opacity-70">請按身分證輸入中文姓名</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">英文全名</Label>
           <Input id="englishName" onChange={(e) => setEnglishName(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                 className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[a-zA-Z\s]*$/.test(englishName) && englishName !== "" ? null :
             <p className="mt-1 text-sm text-slate-700 opacity-70">請按身分證輸入英文姓名</p>}
         </Field>
@@ -174,7 +174,7 @@ function AuditionForm() {
         <Field className="flex flex-col">
           <Label className="text-xl">流動電話號碼（香港）</Label>
           <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                 className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[0-9]{8}$/.test(phone) ? null :
             <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
         </Field>

@@ -48,26 +48,51 @@ export default function Home() {
         </div>
 
         {/* Menu Items */}
-
-        <div className="flex flex-wrap gap-8 px-6 py-16 justify-center sm:px-16">
-          {filteredItems.map((menu) => (
-            <a href={menu.href} key={menu.id} className="sm:w-96">
+        <div className="grid gap-4 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-6 py-16 sm:px-16">
+          {filteredItems.map((item) => (
+            <a href={item.href} key={item.id}
+               className="w-full p-4 rounded border border-red-950/30 relative overflow-hidden group bg-white">
               <div
-                className="flex w-full flex-col rounded-3xl bg-slate-800 p-6 text-white transition-all duration-300 group space-y-6 hover:-translate-y-2 hover:-rotate-1 hover:bg-slate-900 hover:shadow-2xl hover:shadow-slate-900/80">
-                <div className="flex items-start justify-between">
-                  <menu.icon className="w-14"/>
-                  <ArrowRightIcon className="w-7 transition-all duration-300 group-hover:-rotate-45"/>
-                </div>
-                <div className="flex flex-col space-y-2">
-                  <p className="text-2xl font-maru">{menu.name}</p>
-                  <p className="opacity-50">{menu.fullDescription}</p>
-                </div>
-              </div>
+                className="absolute inset-0 bg-gradient-to-r from-red-900 to-red-950 translate-y-[100%] group-hover:translate-y-0 transition-all duration-300"/>
+              <item.icon
+                className="w-44 absolute z-10 -top-12 -right-12 text-9xl text-red-950/10 group-hover:text-red-800 group-hover:rotate-12 transition-all duration-300"/>
+              <item.icon
+                className="w-14 mb-2 text-2xl text-red-800 group-hover:text-white transition-colors relative z-10 duration-300"/>
+              <p className="font-medium text-lg text-red-800 group-hover:text-white relative z-10 duration-300">
+                {item.name}
+              </p>
+              <p className="text-red-950/50 group-hover:text-white relative z-10 duration-300">
+                {item.description}
+              </p>
             </a>
           ))}
         </div>
-
       </div>
     </>
   );
+}
+
+{/*
+function MenuCard(filteredItems: any) {
+  return (
+    <div className="flex flex-wrap gap-8 px-6 py-16 justify-center sm:px-16">
+      {filteredItems.map((menu:any) => (
+        <a href={menu.href} key={menu.id} className="sm:w-96">
+          <div
+            className="flex w-full flex-col rounded-3xl bg-slate-800 p-6 text-white transition-all duration-300 group space-y-6 hover:-translate-y-2 hover:-rotate-1 hover:bg-slate-900 hover:shadow-2xl hover:shadow-slate-900/80">
+            <div className="flex items-start justify-between">
+              <menu.icon className="w-14"/>
+              <ArrowRightIcon className="w-7 transition-all duration-300 group-hover:-rotate-45"/>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <p className="text-2xl font-maru">{menu.name}</p>
+              <p className="opacity-50">{menu.fullDescription}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  )
+}
+*/
 }

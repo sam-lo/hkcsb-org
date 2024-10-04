@@ -57,14 +57,14 @@ function TicketingDetails() {
 
   return (
     <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
-      <p className="text-4xl font-maru md:text-5xl">
+      <p className="text-4xl font-serif font-bold md:text-5xl">
         網上預訂門票
       </p>
-      <p className="opacity-80 sm:text-md md:text-2xl">
+      <p className="opacity-80 sm:text-md md:text-xl">
         以網上方式預訂門票，請填寫以下表格。你的個人資料將會被妥善保密，並會在音樂會後銷毀。
       </p>
       <div className="flex flex-col space-y-2">
-        <p className="text-2xl font-maru md:text-3xl">條款及細則</p>
+        <p className="text-2xl font-serif font-medium md:text-3xl">條款及細則</p>
         <ul className="list-inside list-disc text-md">
           {Policies.map((policy) => (
             <li key={policy}>{policy}</li>
@@ -72,7 +72,7 @@ function TicketingDetails() {
         </ul>
       </div>
       <div className="flex flex-col space-y-2">
-        <p className="text-2xl font-maru md:text-3xl">購票程序</p>
+        <p className="text-2xl font-serif font-medium md:text-3xl">購票程序</p>
         <ul className="list-inside list-decimal text-md">
           {Procedures.map((procedure) => (
             <li key={procedure}>{procedure}</li>
@@ -213,26 +213,26 @@ function TicketingForm() {
     <div
       className="flex flex-col items-center justify-center space-y-6 sm:space-y-0 lg:space-x-28 lg:flex-row">
       <div className="flex w-full flex-col items-center text-slate-700 max-w-[35rem] space-y-6">
-        <form className="w-full text-slate-700 space-y-4 font-maru">
+        <form className="w-full text-slate-700 space-y-4 font-serif font-medium">
           <legend className="text-4xl">預訂門票表格</legend>
           <div className="flex flex-col">
             <label className="text-xl">中文全名</label>
-            <input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
-                   className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+            <Input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text"
+                   className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/[\u4e00-\u9fa5]/.test(name) && name !== "" ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入中文姓名</p>}
           </div>
           <div className="flex flex-col">
             <label className="text-xl">流動電話號碼（香港）</label>
             <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
-                   className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                   className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/^[0-9]{8}$/.test(phone) ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
           </div>
           <div className="flex flex-col">
             <label className="text-xl">電郵地址</label>
             <Input id="Email" onChange={(e) => setEmail(e.target.value)} type="text"
-                   className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                   className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
             {/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ? null :
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入正確的電郵地址</p>}
           </div>
@@ -242,7 +242,7 @@ function TicketingForm() {
               id="Quantity"
               type="number"
               onChange={(e) => setQuantity(Number(e.target.value))}
-              className="mt-2 rounded-2xl bg-slate-300 px-4 text-lg py-2.5 focus:outline-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             />
             {isNaN(quantity as number) || quantity < "1" || quantity > "100" ? (
               <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入1到100之間的數字</p>
@@ -264,9 +264,9 @@ function TicketingForm() {
           </div>
           <div
             className="flex flex-col items-center py-4 space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
-            <div className="flex flex-col items-center sm:items-start text-2xl sm:text-lg">
+            <div className="flex flex-col items-center space-y-1 sm:items-start text-2xl sm:text-lg">
               <p>門票價格: 每張 $200 </p>
-              <p>總金額 (港元結算)：${amount}</p>
+              <p className="text-xl font-bold">總金額 (港元結算)：${amount}</p>
             </div>
             <button
               type="submit"
