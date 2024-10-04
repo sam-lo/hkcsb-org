@@ -211,7 +211,7 @@ function TicketingForm() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center space-y-6 sm:space-y-0 lg:space-x-28 lg:flex-row">
+      className="flex flex-col items-center justify-center space-y-6 sm:space-y-0  lg:space-x-28 lg:flex-row">
       <div className="flex w-full flex-col items-center text-slate-700 max-w-[35rem] space-y-6">
         <form className="w-full text-slate-700 space-y-4 font-serif font-medium">
           <legend className="text-4xl">預訂門票表格</legend>

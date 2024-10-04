@@ -82,7 +82,7 @@ function ConcertDescription() {
           </p>
           <div className="flex flex-col space-y-3">
             {Details.Programme.map((item) => (
-              <div key={item.id} className="flex items-center space-x-2">
+              <div key={item.id} className="flex text-xs items-center space-x-2">
                 <p className="font-bold">{item.composer}</p>
                 <div>|</div>
                 <p>{item.piece}</p>
