@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         {/* Menu Items */}
-        <div className="grid gap-4 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-6 py-16 sm:px-16">
+        <div className="grid gap-4 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 py-16 sm:px-16">
           {filteredItems.map((item) => (
             <a href={item.href} key={item.id}
                className="w-full p-4 rounded border border-red-950/30 relative overflow-hidden group bg-white">

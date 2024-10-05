@@ -28,7 +28,7 @@ export default function ReservationForm() {
         </div>
       </div>
       <div
-        className="flex flex-col items-center px-6 py-10 space-y-8 sm:space-y-12 sm:px-16 md:py-16 lg:space-x-28 lg:flex-row">
+        className="flex flex-col items-center px-4 py-10 space-y-8 sm:space-y-12 sm:px-16 md:py-16 lg:space-x-28 lg:flex-row">
         <TicketingDetails />
         <TicketingForm/>
       </div>

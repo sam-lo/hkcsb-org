@@ -63,7 +63,7 @@ function ConcertDescription() {
 
   return (
     <div
-      className="flex flex-col w-full items-center justify-around px-6 py-12 lg:py-24 space-y-8 lg:space-y-0 lg:flex-row max-w-7xl">
+      className="flex flex-col w-full items-center justify-around px-4 py-12 lg:py-24 space-y-8 lg:space-y-0 lg:flex-row max-w-7xl">
       <Image src={poster} alt="poster" className="h-fit lg:w-1/3"/>
       <div className="flex h-full flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -82,9 +82,9 @@ function ConcertDescription() {
           </p>
           <div className="flex flex-col space-y-3">
             {Details.Programme.map((item) => (
-              <div key={item.id} className="flex text-xs items-center space-x-2">
+              <div key={item.id} className="flex text-sm items-center space-x-2">
                 <p className="font-bold">{item.composer}</p>
-                <div>|</div>
+                <div className="sm:block hidden">|</div>
                 <p>{item.piece}</p>
               </div>
             ))}

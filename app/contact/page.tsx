@@ -67,7 +67,7 @@ export default function Contact() {
           </div>
         </div>
         <div
-          className="flex flex-col items-start justify-center px-6 py-12 sm:px-16 md:py-24 xl:space-x-28 xl:flex-row max-w-7xl xl:items-center">
+          className="flex flex-col items-start justify-center px-4 py-12 sm:px-16 md:py-24 xl:space-x-28 xl:flex-row max-w-7xl xl:items-center">
           <div className="flex flex-col text-slate-700 max-w-[35rem] space-y-6">
             <p className="text-4xl font-serif font-medium md:text-6xl">
               歡迎隨時聯絡我們
@@ -80,7 +80,7 @@ export default function Contact() {
             {contactMethods.map((method) => (
               <a key={method.id} href={method.href} className="flex items-center transition-all duration-300 hover:text-red-800 md:space-x-4">
                 <method.icon className="w-7 text-red-800 md:w-10"/>
-                <div className="flex divide-x divide-slate-700">
+                <div className="flex items-center divide-x divide-slate-700">
                   <p className="lg:w-52 w-40 px-4">{method.text}</p>
                   <p className="px-4">{method.decription}</p>
                 </div>
