@@ -15,7 +15,7 @@ export default function About() {
                className="h-full select-none overflow-y-visible object-cover brightness-[0.4] grayscale-[0.6] w-full lg:translate-y-60"/>
         <div className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
-          <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
+          <div className="flex flex-col text-white space-y-2 md:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
               關於樂團
             </p>
@@ -45,11 +45,11 @@ export default function About() {
 function AboutCarpe() {
   return (
     <div
-      className=" flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 lg:flex-row-reverse lg:px-16 max-w-[90rem]">
-      <Image src={practice} alt="practice" className="h-fit shadow-black lg:w-2/5"/>
+      className=" flex flex-col space-y-10 lg:space-y-0 text-white items-center justify-around px-6 lg:flex-row-reverse lg:px-16 max-w-[90rem]">
+      <Image src={practice} alt="practice" className="h-fit lg:w-2/5 shadow-2xl shadow-white/10"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
-        <div className="flex flex-col text-slate-700 space-y-2 lg:space-y-4">
+        <div className="flex flex-col space-y-2 lg:space-y-4">
           <p className="w-fit font-cinzel text-2xl lg:text-5xl">
             Carpe Symphonic Band
           </p>
@@ -58,7 +58,7 @@ function AboutCarpe() {
           </p>
         </div>
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
-        <div className="flex flex-col text-slate-700 opacity-80 space-y-4 text-md sm:text-lg">
+        <div className="flex flex-col opacity-70 space-y-4 text-md sm:text-lg">
           <p>
             “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分珍惜眼前的每一刻。它的意義不僅僅是享受當下，更強調每一次的合奏，都是獨一無二的。
           </p>
@@ -73,11 +73,11 @@ function AboutCarpe() {
 
 function AboutConductor() {
   return (
-    <div className="flex flex-col space-y-10 lg:space-y-0 items-center justify-around px-6 lg:flex-row lg:px-16 max-w-[90rem]">
-      <Image src={conductor} alt="Conductor" className="h-fit lg:w-1/3"/>
+    <div className="flex flex-col space-y-10 lg:space-y-0 text-white items-center justify-around px-6 lg:flex-row lg:px-16 max-w-[90rem]">
+      <Image src={conductor} alt="Conductor" className="h-fit lg:w-1/3 shadow-2xl shadow-white/10"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
-        <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
+        <div className="flex flex-col space-y-2 md:space-y-4">
           <p className="w-fit font-serif font-thin text-3xl md:text-5xl">
             梁境佑 先生
           </p>
@@ -86,7 +86,7 @@ function AboutConductor() {
           </p>
         </div>
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
-        <div className="flex flex-col text-slate-700 opacity-80 space-y-4 text-md sm:text-lg">
+        <div className="flex flex-col opacity-70 space-y-4 text-md sm:text-lg">
           <p>
             梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院（Royal
             Northern College of Music）深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet

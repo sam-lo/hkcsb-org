@@ -10,13 +10,13 @@ export default function Header() {
     <>
       <div className="relative">
         <div
-          className="select-none absolute z-50 inset-x-0 lg:from-slate-900 lg:to-slate-950 lg:bg-gradient-to-r rounded-b-3xl lg:shadow-2xl">
+          className="select-none absolute z-50 inset-x-0 lg:bg-black rounded-b-3xl lg:shadow-2xl">
           <div className="items-center justify-start space-x-8 py-5 px-8 hidden lg:flex">
             <HomeIcon onClick={() => window.location.href = '/'}
                       className="w-12 p-2 rounded-3xl text-slate-50 hover:text-slate-700 hover:bg-slate-50 transition-all duration-300"/>
             {filteredItems.map((item) => (
               <a href={item.href} key={item.id}
-                 className="py-3 px-5 rounded-3xl text-xl text-center text-slate-50 hover:text-slate-700 hover:bg-slate-50 transition-all duration-300">
+                 className="py-3 px-5 rounded-3xl text-xl text-center text-white hover:text-black hover:bg-slate-50 transition-all duration-300">
                 {item.name}
               </a>
             ))}

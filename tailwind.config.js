@@ -9,12 +9,15 @@ module.exports = {
     fontFamily: {
       sans: ["Noto Sans HK"],
       serif: ["Noto Serif HK"],
-      maru: ["Kiwi Maru"],
       cinzel: ["Cinzel"],
       calligraffitti: ["Calligraffitti"],
 
     },
     extend: {
+      colors: {
+        accentred: "#b32425",
+        accentwhite: "#fffde1",
+      }
     },
   },
   plugins: [],

@@ -35,7 +35,7 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="flex flex-col w-full items-center px-6 sm:space-y-12 space-y-8 md:py-24 py-10 lg:space-x-28 sm:px-16 lg:flex-row max-w-7xl">
+        className="flex flex-col w-full items-center px-4 sm:space-y-12 space-y-8 md:py-24 py-10 lg:space-x-28 sm:px-16 lg:flex-row max-w-7xl">
         <AuditionDetails/>
         <hr className="w-full lg:hidden border-2 border-red-800 px-10 brightness-125"/>
         <AuditionForm/>
@@ -46,16 +46,16 @@ export default function Audition() {
 
 function AuditionDetails() {
   return (
-    <div className="flex flex-col text-slate-700 space-y-6">
+    <div className="flex flex-col text-white space-y-6">
       <p className="text-4xl font-serif font-medium md:text-6xl">
         歡迎參加試音
       </p>
-      <p className="opacity-80 sm:text-lg md:text-xl">
+      <p className="opacity-60 sm:text-lg md:text-xl">
         我們誠邀對音樂有熱誠的樂手加入樂團，不論您是木管，銅管或敲擊樂手，我們都歡迎您參加試音。
       </p>
       <div className="flex flex-col space-y-2">
         <p className="text-2xl font-serif font-bold md:text-3xl">申請者要求</p>
-        <ul className="list-inside list-disc text-md">
+        <ul className="list-inside opacity-80 list-disc text-md">
           <li>16歲以上 (具有自理能力)</li>
           <li>若申請人未滿18歲需要家長或監護人同意</li>
           <li>ABRSM 第六級以上或相等程度資歷</li>
@@ -64,7 +64,7 @@ function AuditionDetails() {
       </div>
       <div className="flex flex-col space-y-2">
         <p className="text-2xl font-serif font-bold md:text-3xl">試音程序</p>
-        <ul className="list-inside list-decimal text-md">
+        <ul className="list-inside opacity-80 list-decimal text-md">
           <li>簡單面談</li>
           <li>演奏水平測試 (即場視譜及自選樂曲)</li>
           <li>樂團坐奏測試</li>
@@ -72,11 +72,11 @@ function AuditionDetails() {
       </div>
       <p className="sm:text-lg md:text-xl">我們收到申請表格後會盡快聯絡您。</p>
       <div className="flex space-x-2 group">
-        <a href="/contact" className="w-fit opacity-80 hover:text-red-800 sm:text-lg md:text-xl">
+        <a href="/contact" className="w-fit opacity-60 hover:opacity-100 sm:text-lg md:text-xl">
           如果您對試音有任何疑問，歡迎與我們聯絡。
         </a>
         <ArrowRightIcon
-          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 group-hover:opacity-100"/>
+          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 brightness-125 group-hover:opacity-100"/>
       </div>
     </div>
   )
@@ -141,28 +141,28 @@ function AuditionForm() {
   };
 
   return (
-    <div className="flex w-full flex-col text-slate-700 space-y-6">
-      <Fieldset className="text-slate-700 space-y-4 font-serif font-medium">
+    <div className="flex w-full flex-col text-white space-y-6">
+      <Fieldset className="text-white space-y-4 font-serif font-medium">
         <Legend className="text-4xl font-medium">申請表格</Legend>
         <Field className="flex flex-col">
           <Label className="text-xl">中文全名</Label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                 className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/[\u4e00-\u9fa5]/.test(chineseName) && chineseName !== "" ? null :
-            <p className="mt-1 text-sm text-slate-700 opacity-70">請按身分證輸入中文姓名</p>}
+            <p className="mt-1 text-sm opacity-70">請按身分證輸入中文姓名</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">英文全名</Label>
           <Input id="englishName" onChange={(e) => setEnglishName(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                 className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[a-zA-Z\s]*$/.test(englishName) && englishName !== "" ? null :
-            <p className="mt-1 text-sm text-slate-700 opacity-70">請按身分證輸入英文姓名</p>}
+            <p className="mt-1 text-sm opacity-70">請按身分證輸入英文姓名</p>}
         </Field>
         <Field className="flex flex-col">
           <Label className="text-xl">稱謂</Label>
           <div className="relative">
             <Select id="title" onChange={(e) => setTitle(e.target.value)} className={clsx(
-              'mt-2 block w-full rounded-2xl appearance-none text-lg font-sans font-normal border-none bg-slate-300 px-4 py-3',
+              'mt-2 block w-full rounded-2xl appearance-none text-lg font-sans font-normal border-none bg-white/40 px-4 py-3',
               'rounded-2xl focus:outline-none data-[focus]:outline-2 font-sans font-normal data-[focus]:-outline-offset-2 data-[focus]:outline-white/25'
             )}>
               {titleOptions.map((option) => (
@@ -174,16 +174,16 @@ function AuditionForm() {
         <Field className="flex flex-col">
           <Label className="text-xl">流動電話號碼（香港）</Label>
           <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
-                 className="mt-2 rounded-2xl font-sans font-normal bg-slate-300 px-4 text-lg py-2.5 focus:outline-none"/>
+                 className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[0-9]{8}$/.test(phone) ? null :
-            <p className="mt-1 text-sm text-slate-700 opacity-70">請輸入8位數字的電話號碼</p>}
+            <p className="mt-1 text-sm opacity-70">請輸入8位數字的電話號碼</p>}
         </Field>
         <Field className="flex flex-col items-end py-3 space-y-1">
           <button onClick={submitForm} disabled={!validation}
-             className={"flex w-fit px-6 py-3 text-2xl bg-slate-400 rounded-2xl " + (validation ? null : "pointer-events-none grayscale cursor-not-allowed")}>
+             className={"flex w-fit px-6 py-3 text-2xl rounded-2xl bg-white" + (validation ? null : "/40 pointer-events-none opacity-40 cursor-not-allowed")}>
             提交申請
           </button>
-          <div className="text-slate-700">
+          <div className="">
             {validation ? null : <p className="text-center text-sm opacity-70">請填寫正確的資料</p>}
           </div>
         </Field>

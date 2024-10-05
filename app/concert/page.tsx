@@ -65,9 +65,9 @@ function ConcertDescription() {
     <div
       className="flex flex-col w-full items-center justify-around px-4 py-12 lg:py-24 space-y-8 lg:space-y-0 lg:flex-row max-w-7xl">
       <Image src={poster} alt="poster" className="h-fit lg:w-1/3"/>
-      <div className="flex h-full flex-col lg:w-1/2">
+      <div className="flex h-full flex-col text-white lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
-        <div className="flex flex-col text-slate-700 space-y-2 md:space-y-4">
+        <div className="flex flex-col space-y-2 md:space-y-4">
           <p className="w-fit font-cinzel text-4xl md:text-5xl">
             {Details.title}
           </p>
@@ -76,13 +76,13 @@ function ConcertDescription() {
           </p>
         </div>
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
-        <div className="flex flex-col text-slate-700 space-y-6">
-          <p className="text-xl font-bold">
+        <div className="flex flex-col space-y-6">
+          <p className="text-2xl font-bold">
             Programme Highlights
           </p>
           <div className="flex flex-col space-y-3">
             {Details.Programme.map((item) => (
-              <div key={item.id} className="flex text-sm items-center space-x-2">
+              <div key={item.id} className="flex sm:text-lg text-sm items-center space-x-2">
                 <p className="font-bold">{item.composer}</p>
                 <div className="sm:block hidden">|</div>
                 <p>{item.piece}</p>
@@ -90,9 +90,9 @@ function ConcertDescription() {
             ))}
           </div>
         </div>
-        <div className="flex pt-8  flex-row-reverse">
+        <div className="flex pt-8 flex-row-reverse">
           <a href="/concert/reservation"
-             className="flex rounded-xl bg-slate-500 px-4 py-3 text-2xl text-white transition-all duration-300 space-x-2 font-maru hover:-translate-y-1 hover:-rotate-1 hover:bg-red-900 hover:shadow-2xl hover:shadow-slate-700/70">
+             className="flex rounded-xl px-4 py-3 text-2xl text-white transition-all duration-100 space-x-2 bg-red-800 hover:bg-red-950">
             <CalendarDaysIcon className="w-8"/>
             <p>網上預訂門票</p>
           </a>
