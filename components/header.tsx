@@ -37,20 +37,20 @@ export default function Header() {
               >
                 <PopoverPanel className="absolute inset-x-0 z-10 mt-5 flex w-screen max-w-max px-4">
                   <div
-                    className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-slate-50 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+                    className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-neutral-900 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                     <div className="p-2">
                       {menusItems.map((item) => (
                         <a href={item.href} key={item.name}
-                           className="group flex gap-x-6 rounded-2xl p-2 px-4 hover:bg-slate-200">
+                           className="group items-center flex gap-x-6 rounded-2xl p-2 hover:bg-neutral-800">
                           <div
-                            className="mt-1 flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-slate-100 group-hover:bg-slate-900/80 transition duration-300 ease-in-out">
-                            <item.icon className="h-7 w-7 text-slate-700 group-hover:text-slate-50" aria-hidden="true"/>
+                            className="flex h-14 w-14 flex-none items-center justify-center rounded-xl bg-neutral-800 group-hover:bg-neutral-900 transition duration-300 ease-in-out">
+                            <item.icon className="h-8 text-gold brightness-125" aria-hidden="true"/>
                           </div>
                           <div>
-                            <p className="font-semibold text-lg text-slate-700">
+                            <p className="font-semibold text-lg text-white">
                               {item.name}
                             </p>
-                            <p className="text-slate-700 opacity-80">{item.description}</p>
+                            <p className="text-white opacity-60">{item.description}</p>
                           </div>
                         </a>
                       ))}

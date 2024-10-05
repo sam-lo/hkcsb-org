@@ -42,9 +42,8 @@ export const menusItems = [
   {
     id: 4,
     name: "聯絡我們",
-    description: "與我們的樂團經理聯絡",
-    fullDescription: "\n" +
-      "如果您對樂團有任何問題或意見，歡迎與我們聯絡，我們會盡快回覆您。",
+    description: "歡迎詢問及提出意見",
+    fullDescription:"如果您對樂團有任何問題或意見，歡迎與我們聯絡，我們會盡快回覆您。",
     href: "/contact",
     icon: ChatBubbleLeftEllipsisIcon,
   }

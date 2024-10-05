@@ -52,7 +52,7 @@ export default function Contact() {
                 聯絡我們
               </p>
               <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
-                與我們的樂團經理聯絡
+                歡迎詢問及提出意見
               </p>
             </div>
             <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
