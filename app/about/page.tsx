@@ -26,8 +26,8 @@ export default function About() {
           </div>
           <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
-            <p className="text-xl text-white group-hover:text-red-950">
+             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
+            <p className="text-xl text-white font-light group-hover:text-red-950">
               即將舉行的音樂會
             </p>
             <ArrowRightIcon

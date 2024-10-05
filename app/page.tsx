@@ -37,7 +37,7 @@ export default function Home() {
               </p>
             </div>
             <a href="/concert"
-               className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white rounded-xl outline px-6 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+               className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-xl outline px-6 py-4 transition-all duration-300 group hover:bg-white lg:flex">
               <p className="text-2xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>

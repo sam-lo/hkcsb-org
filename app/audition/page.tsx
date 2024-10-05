@@ -26,8 +26,8 @@ export default function Audition() {
           </div>
           <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
-            <p className="text-xl text-white group-hover:text-red-950">
+             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
+            <p className="text-xl text-white font-light group-hover:text-red-950">
               即將舉行的音樂會
             </p>
             <ArrowRightIcon
@@ -77,7 +77,7 @@ function AuditionDetails() {
           如果您對試音有任何疑問，歡迎與我們聯絡。
         </a>
         <ArrowRightIcon
-          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:text-red-800 brightness-125 group-hover:opacity-100"/>
+          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 brightness-125 group-hover:opacity-100"/>
       </div>
     </div>
   )
@@ -181,7 +181,7 @@ function AuditionForm() {
         </div>
         <div className="flex flex-col items-end py-3 space-y-1">
           <button onClick={submitForm} disabled={!validation}
-                  className={"flex w-fit px-6 py-3 text-2xl rounded-2xl bg-white" + (validation ? null : "/40 pointer-events-none opacity-40 cursor-not-allowed")}>
+                  className={"flex w-fit px-6 py-3 text-2xl rounded-2xl " + (validation ? "bg-gold" : "bg-white/40 pointer-events-none cursor-not-allowed")}>
             提交申請
           </button>
           <div className="">

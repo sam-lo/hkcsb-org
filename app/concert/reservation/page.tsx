@@ -265,15 +265,15 @@ function TicketingForm() {
         </div>
         <div
           className="flex flex-col items-center py-4 space-y-4 sm:space-x-12 sm:space-y-0 sm:flex-row sm:justify-between">
-          <div className="flex flex-col items-center space-y-1 sm:items-start text-2xl sm:text-lg">
-            <p className="text-xl sm:text-md">門票價格: 每張 $200 </p>
-            <p className="text-2xl sm:text-lg font-bold">總金額 (港元結算)：${amount}</p>
+          <div className="flex flex-col w-fullitems-center space-y-1 sm:items-start">
+            <p className="text-xl sm:text-lg">門票價格: 每張 $200 </p>
+            <p className="text-3xl sm:text-2xl font-bold">總金額 (港元結算)：${amount}</p>
           </div>
           <button
             type="submit"
             disabled={!isFormValid}
             onClick={submitForm}
-            className={`rounded-2xl px-7 py-4 text-slate-50 text-2xl ${isFormValid ? "bg-white" : "bg-white/40"}`}
+            className={`rounded-2xl px-6 py-3 text-slate-50 text-2xl ${isFormValid ? "bg-gold" : "bg-white/40"}`}
           >
             提交表格
           </button>
