@@ -100,15 +100,13 @@ function AuditionForm() {
   const submitForm = async (event: React.FormEvent) => {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    console.log(phone); // Log the phone number to verify it's being captured
-
     const url = 'https://script.google.com/macros/s/AKfycbwba8jQ4nnxpsRmoe-J1nQZlaQJE5Mq1SFSX3rGyKOsMdv7mQBfKu_i5oFYYmy_UsKimg/exec'; // Google Apps Script Web App URL
 
     const formData = new URLSearchParams();
     formData.append('中文全名', chineseName);
     formData.append('英文全名', englishName);
     formData.append('稱謂', title);
-    formData.append('電郵地址', phone);
+    formData.append('流動電話號碼', phone);
 
     try {
       const response = await fetch(url, {

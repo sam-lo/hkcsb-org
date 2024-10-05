@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <div className="relative">
         <div
-          className="select-none absolute z-50 inset-x-0 lg:bg-black rounded-b-3xl lg:shadow-2xl">
+          className="select-none absolute z-50 inset-x-0 lg:bg-black lg:shadow-2xl">
           <div className="items-center justify-start space-x-8 py-5 px-8 hidden lg:flex">
             <HomeIcon onClick={() => window.location.href = '/'}
                       className="w-12 p-2 rounded-3xl text-slate-50 hover:text-black hover:bg-white transition-all duration-300"/>
