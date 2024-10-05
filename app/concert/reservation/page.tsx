@@ -30,7 +30,8 @@ export default function ReservationForm() {
       </div>
       <div
         className="flex flex-col w-full justify-center items-center px-4 space-y-8 md:py-24 py-10 lg:space-x-28 sm:px-16 lg:flex-row max-w-7xl">
-        <TicketingDetails />
+        <TicketingDetails/>
+        <hr className="w-full lg:hidden border-2 border-red-800 px-10 brightness-125"/>
         <TicketingForm/>
       </div>
     </div>
@@ -211,9 +212,7 @@ function TicketingForm() {
   };
 
   return (
-    <div
-      className="flex flex-col items-center justify-center space-y-6 sm:space-y-0  lg:space-x-28 lg:flex-row">
-      <div className="flex w-full flex-col items-center text-white max-w-[35rem] space-y-6">
+      <div className="flex basis-3/5 w-full flex-col items-center text-white max-w-[35rem] space-y-6">
         <form className="w-full text-white space-y-4 font-serif font-medium">
           <legend className="text-4xl">預訂門票表格</legend>
           <div className="flex flex-col">
@@ -280,6 +279,5 @@ function TicketingForm() {
           </div>
         </form>
       </div>
-    </div>
   )
 }
