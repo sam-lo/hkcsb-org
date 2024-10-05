@@ -84,22 +84,23 @@ function AuditionDetails() {
 }
 
 function AuditionForm() {
+  const [chineseName, setChineseName] = useState("");
+  const [englishName, setEnglishName] = useState("");
+  const [title, setTitle] = useState("Mr. 先生");
+  const [phone, setPhone] = useState("");
 
-  const [chineseName, setChineseName] = useState("")
-  const [englishName, setEnglishName] = useState("")
-  const [title, setTitle] = useState("Mr. 先生")
-  const [phone, setPhone] = useState("")
-
-  const validation = (/[\u4e00-\u9fa5]/.test(chineseName) && /^[a-zA-Z\s]*$/.test(englishName) && /^[0-9]{8}$/.test(phone))
+  const validation = (/[\u4e00-\u9fa5]/.test(chineseName) && /^[a-zA-Z\s]*$/.test(englishName) && /^[0-9]{8}$/.test(phone));
 
   const titleOptions = [
-    {id: 1, value: "Mr. 先生"},
-    {id: 2, value: "Ms. 小姐"},
-    {id: 3, value: "Mrs. 太太"},
-  ]
+    { id: 1, value: "Mr. 先生" },
+    { id: 2, value: "Ms. 小姐" },
+    { id: 3, value: "Mrs. 太太" },
+  ];
 
   const submitForm = async (event: React.FormEvent) => {
     event.preventDefault(); // Prevent the default form submission behavior
+
+    console.log(phone); // Log the phone number to verify it's being captured
 
     const url = 'https://script.google.com/macros/s/AKfycbwba8jQ4nnxpsRmoe-J1nQZlaQJE5Mq1SFSX3rGyKOsMdv7mQBfKu_i5oFYYmy_UsKimg/exec'; // Google Apps Script Web App URL
 
@@ -107,7 +108,7 @@ function AuditionForm() {
     formData.append('中文全名', chineseName);
     formData.append('英文全名', englishName);
     formData.append('稱謂', title);
-    formData.append('電話號碼', phone);
+    formData.append('電郵地址', phone);
 
     try {
       const response = await fetch(url, {
@@ -177,7 +178,7 @@ function AuditionForm() {
           <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
                  className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[0-9]{8}$/.test(phone) ? null :
-            <p className="mt-1 text-sm opacity-70">請輸入8位數字的電話號碼</p>}
+            <p className="mt-1 text-sm text-white opacity-70">請輸入8位數字的電話號碼</p>}
         </div>
         <div className="flex flex-col items-end py-3 space-y-1">
           <button onClick={submitForm} disabled={!validation}
@@ -190,5 +191,5 @@ function AuditionForm() {
         </div>
       </form>
     </div>
-  )
+  );
 }

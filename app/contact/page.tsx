@@ -78,9 +78,9 @@ export default function Contact() {
           </div>
           <div className="flex flex-col py-8 sm:text-lg text-white opacity-80 space-y-4 md:text-2xl">
             {contactMethods.map((method) => (
-              <a key={method.id} href={method.href} className="flex items-center transition-all duration-300 hover:text-red-800 hover:brightness-125 md:space-x-4">
+              <a key={method.id} href={method.href} className="flex items-center transition-all duration-300 group hover:brightness-125 md:space-x-4">
                 <method.icon className="w-7 text-gold md:w-10"/>
-                <div className="flex items-center divide-x divide-white">
+                <div className="flex items-center divide-x group-hover:opacity-70 divide-white">
                   <p className="lg:w-52 w-40 px-4">{method.text}</p>
                   <p className="px-4">{method.decription}</p>
                 </div>

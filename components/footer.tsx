@@ -16,7 +16,7 @@ export default function Footer () {
           <div className="flex lg:space-x-8 lg:space-y-0 space-y-4 flex-col lg:flex-row">
             {filteredItems.map((menu) => (
               <a key={menu.id} href={menu.href} className="hover:opacity-70 flex space-x-2">
-                <menu.icon className="w-8"/>
+                <menu.icon className="w-8 text-gold"/>
                 <p className="text sm:text-lg">
                   {menu.name}
                 </p>
