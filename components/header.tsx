@@ -13,10 +13,10 @@ export default function Header() {
           className="select-none absolute z-50 inset-x-0 lg:bg-black rounded-b-3xl lg:shadow-2xl">
           <div className="items-center justify-start space-x-8 py-5 px-8 hidden lg:flex">
             <HomeIcon onClick={() => window.location.href = '/'}
-                      className="w-12 p-2 rounded-3xl text-slate-50 hover:text-slate-700 hover:bg-slate-50 transition-all duration-300"/>
+                      className="w-12 p-2 rounded-3xl text-slate-50 hover:text-black hover:bg-white transition-all duration-300"/>
             {filteredItems.map((item) => (
               <a href={item.href} key={item.id}
-                 className="py-3 px-5 rounded-3xl text-xl text-center text-white hover:text-black hover:bg-slate-50 transition-all duration-300">
+                 className="py-3 px-5 rounded-3xl text-xl text-center text-white hover:text-black hover:bg-white transition-all duration-300">
                 {item.name}
               </a>
             ))}
@@ -24,7 +24,7 @@ export default function Header() {
           <div className="flex lg:hidden items-center justify-end py-5 sm:px-16 px-6">
             <Popover className="">
               <PopoverButton className="active:opacity-100 focus:outline-none opacity-80">
-                <Bars3Icon className="text-slate-50 w-8" aria-hidden={true}/>
+                <Bars3Icon className="text-white w-8" aria-hidden={true}/>
               </PopoverButton>
               <Transition
                 as={Fragment}

@@ -17,6 +17,7 @@ module.exports = {
       colors: {
         accentred: "#b32425",
         accentwhite: "#fffde1",
+        gold: "#917c50",
       }
     },
   },

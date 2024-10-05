@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import {Field, Fieldset, Input, Label, Legend, Select} from '@headlessui/react'
+import {Input, Select} from '@headlessui/react'
 import clsx from 'clsx';
 import scorewithconduct from "@/public/photo/scorewithconduct.jpg";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
@@ -10,22 +10,23 @@ export default function Audition() {
   return (
     <div className="flex flex-col items-center w-full">
       <div
-        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
+        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[27rem]">
         <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
         <Image src={scorewithconduct} alt="Concert Hall" className="h-full select-none object-cover brightness-50"/>
-        <div className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+        <div
+          className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
-          <div className="flex flex-col text-slate-50 space-y-2 md:space-y-4">
+          <div className="flex flex-col text-white space-y-2 md:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
               加入樂團
             </p>
             <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
-              加入 Carpe Symphonic Band
+              成為我們的一員
             </p>
           </div>
-          <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+          <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="my-5 hidden w-64 select-none items-center justify-between rounded-3xl outline outline-white px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
             <p className="text-xl text-white group-hover:text-red-950">
               即將舉行的音樂會
             </p>
@@ -47,7 +48,7 @@ export default function Audition() {
 function AuditionDetails() {
   return (
     <div className="flex flex-col text-white space-y-6">
-      <p className="text-4xl font-serif font-medium md:text-6xl">
+      <p className="text-4xl font-serif font-medium md:text-5xl">
         歡迎參加試音
       </p>
       <p className="opacity-60 sm:text-lg md:text-xl">
@@ -141,25 +142,25 @@ function AuditionForm() {
   };
 
   return (
-    <div className="flex w-full flex-col text-white space-y-6">
-      <Fieldset className="text-white space-y-4 font-serif font-medium">
-        <Legend className="text-4xl font-medium">申請表格</Legend>
-        <Field className="flex flex-col">
-          <Label className="text-xl">中文全名</Label>
+    <div className="flex w-full flex-col items-center text-white max-w-[35rem] space-y-8">
+      <form className="w-full text-white space-y-4 font-serif font-medium">
+        <legend className="text-4xl font-medium">申請表格</legend>
+        <div className="flex flex-col">
+          <label className="text-xl">中文全名</label>
           <Input id="chineseName" onChange={(e) => setChineseName(e.target.value)} type="text"
                  className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/[\u4e00-\u9fa5]/.test(chineseName) && chineseName !== "" ? null :
             <p className="mt-1 text-sm opacity-70">請按身分證輸入中文姓名</p>}
-        </Field>
-        <Field className="flex flex-col">
-          <Label className="text-xl">英文全名</Label>
+        </div>
+        <div className="flex flex-col">
+          <label className="text-xl">英文全名</label>
           <Input id="englishName" onChange={(e) => setEnglishName(e.target.value)} type="text"
                  className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[a-zA-Z\s]*$/.test(englishName) && englishName !== "" ? null :
             <p className="mt-1 text-sm opacity-70">請按身分證輸入英文姓名</p>}
-        </Field>
-        <Field className="flex flex-col">
-          <Label className="text-xl">稱謂</Label>
+        </div>
+        <div className="flex flex-col">
+          <label className="text-xl">稱謂</label>
           <div className="relative">
             <Select id="title" onChange={(e) => setTitle(e.target.value)} className={clsx(
               'mt-2 block w-full rounded-2xl appearance-none text-lg font-sans font-normal border-none bg-white/40 px-4 py-3',
@@ -170,24 +171,24 @@ function AuditionForm() {
               ))}
             </Select>
           </div>
-        </Field>
-        <Field className="flex flex-col">
-          <Label className="text-xl">流動電話號碼（香港）</Label>
+        </div>
+        <div className="flex flex-col">
+          <label className="text-xl">流動電話號碼（香港）</label>
           <Input id="Phone" onChange={(e) => setPhone(e.target.value)} type="text"
                  className="mt-2 rounded-2xl font-sans font-normal bg-white/40 px-4 text-lg py-2.5 focus:outline-none"/>
           {/^[0-9]{8}$/.test(phone) ? null :
             <p className="mt-1 text-sm opacity-70">請輸入8位數字的電話號碼</p>}
-        </Field>
-        <Field className="flex flex-col items-end py-3 space-y-1">
+        </div>
+        <div className="flex flex-col items-end py-3 space-y-1">
           <button onClick={submitForm} disabled={!validation}
-             className={"flex w-fit px-6 py-3 text-2xl rounded-2xl bg-white" + (validation ? null : "/40 pointer-events-none opacity-40 cursor-not-allowed")}>
+                  className={"flex w-fit px-6 py-3 text-2xl rounded-2xl bg-white" + (validation ? null : "/40 pointer-events-none opacity-40 cursor-not-allowed")}>
             提交申請
           </button>
           <div className="">
             {validation ? null : <p className="text-center text-sm opacity-70">請填寫正確的資料</p>}
           </div>
-        </Field>
-      </Fieldset>
+        </div>
+      </form>
     </div>
   )
 }

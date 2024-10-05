@@ -20,7 +20,7 @@ export default function Concert() {
               音樂會與門票
             </p>
             <p className="w-fit text-lg opacity-80 lg:text-2xl">
-              了解即將舉行的音樂會
+              查看音樂會資訊與購票
             </p>
           </div>
           <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>

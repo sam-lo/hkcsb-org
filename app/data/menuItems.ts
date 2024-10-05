@@ -18,7 +18,7 @@ export const menusItems = [
   {
     id: 1,
     name: "關於樂團",
-    description: "了解 Carpe 的資訊",
+    description: "了解樂團的資訊",
     fullDescription: "Carpe Symphonic Band 是一個由一群熱愛音樂的年輕人組成的樂團，請點擊這裡了解更多...",
     href: "/about",
     icon: QuestionMarkCircleIcon,
@@ -34,7 +34,7 @@ export const menusItems = [
   {
     id: 3,
     name: "加入樂團",
-    description: "加入Carpe的大家庭",
+    description: "成為我們的一員",
     fullDescription: "如果您對音樂有熱情，歡迎參加我們的試音，我們歡迎各種樂器的樂手加入！",
     href: "/audition",
     icon: UserGroupIcon,

@@ -40,7 +40,7 @@ export default function Contact() {
     <>
       <div className="flex flex-col items-center">
         <div
-          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[28rem]">
+          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[27rem]">
           <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
           <Image src={envelope} alt="Concert Hall"
                  className="h-full select-none object-cover brightness-[0.5] grayscale"/>
@@ -52,12 +52,12 @@ export default function Contact() {
                 聯絡我們
               </p>
               <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
-                可透過以下方式查詢
+                與我們的樂團經理聯絡
               </p>
             </div>
-            <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
+            <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
             <a href="/concert"
-               className="my-5 hidden w-64 select-none items-center justify-between outline-white rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+               className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
               <p className="text-xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>
@@ -69,7 +69,7 @@ export default function Contact() {
         <div
           className="flex flex-col items-start justify-center px-4 py-12 sm:px-16 md:py-24 xl:space-x-28 xl:flex-row max-w-7xl xl:items-center">
           <div className="flex flex-col text-white max-w-[35rem] space-y-6">
-            <p className="text-4xl font-serif font-medium md:text-6xl">
+            <p className="text-4xl font-serif font-medium md:text-5xl">
               歡迎隨時聯絡我們
             </p>
             <p className="text-lg opacity-60 md:text-2xl">
@@ -80,7 +80,7 @@ export default function Contact() {
             {contactMethods.map((method) => (
               <a key={method.id} href={method.href} className="flex items-center transition-all duration-300 hover:text-red-800 hover:brightness-125 md:space-x-4">
                 <method.icon className="w-7 text-red-800 md:w-10"/>
-                <div className="flex items-center divide-x divide-slate-700">
+                <div className="flex items-center divide-x divide-white">
                   <p className="lg:w-52 w-40 px-4">{method.text}</p>
                   <p className="px-4">{method.decription}</p>
                 </div>

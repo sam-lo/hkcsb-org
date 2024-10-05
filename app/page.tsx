@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center">
         <div
-          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[34rem] lg:h-[47rem]">
+          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[36rem] lg:h-[47rem]">
           <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
           <Image src={wall} alt="Concert Hall"
                  className="h-full select-none object-cover brightness-[0.4] grayscale-[0.5] lg:translate-y-10"/>
@@ -37,8 +37,8 @@ export default function Home() {
               </p>
             </div>
             <a href="/concert"
-               className="my-8 hidden w-64 select-none items-center justify-between outline-white rounded-3xl outline px-5 py-4 transition-all duration-300 group hover:bg-white lg:flex">
-              <p className="text-xl text-white group-hover:text-red-950">
+               className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white rounded-xl outline px-6 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+              <p className="text-2xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>
               <ArrowRightIcon
@@ -51,17 +51,17 @@ export default function Home() {
         <div className="grid gap-4 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 sm:py-16 py-8 sm:px-16">
           {filteredItems.map((item) => (
             <a href={item.href} key={item.id}
-               className="w-full p-5 shadow-lg shadow-white/10 hover:-translate-y-1.5 bg-neutral-950 sm:rounded-lg rounded-3xl border-2 border-white/30 relative overflow-hidden group transition-all duration-500">
+               className="w-full p-5 shadow-lg shadow-white/10 hover:-translate-y-1.5 bg-neutral-950 rounded-lg border-2 border-gold/30 relative overflow-hidden group transition-all duration-500">
               <div
                 className="absolute inset-0 bg-gradient-to-br from-transparent to-black group-hover:block hidden transition-all duration-300"/>
               <item.icon
                 className="w-12 mb-2 text-2xl text-white transition-colors relative z-10 duration-300"/>
               <item.icon
-                className="w-36 absolute z-10 -top-12 -right-12 text-9xl text-white/10"/>
-              <p className="font-medium font-serif text-2xl text-white relative z-10 duration-300">
+                className="w-32 absolute z-10 -top-12 -right-12 text-9xl text-gold/50"/>
+              <p className="font-medium font-serif text-xl sm:text-2xl text-white relative z-10 duration-300">
                 {item.name}
               </p>
-              <p className="text-white/40 relative z-10 duration-300">
+              <p className="text-white/40 text-sm sm:text-lg relative z-10 duration-300">
                 {item.description}
               </p>
             </a>
