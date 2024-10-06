@@ -57,7 +57,7 @@ function AuditionDetails() {
       <div className="flex flex-col space-y-2">
         <p className="text-2xl font-serif font-bold md:text-3xl">申請者要求</p>
         <ul className="list-inside opacity-80 list-disc text-md">
-          <li>16歲以上 (具有自理能力)</li>
+          <li>16歲以上 (具備自理能力)</li>
           <li>若申請人未滿18歲需要家長或監護人同意</li>
           <li>ABRSM 第六級以上或相等程度資歷</li>
           <li>需要有1年或以上樂團經驗</li>
