@@ -36,7 +36,7 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="flex flex-col w-full justify-center items-center px-4 space-y-8 md:py-24 py-10 md:px-16 lg:space-x-28 lg:flex-row max-w-7xl">
+        className="flex flex-col w-full justify-center items-center px-4 lg:space-y-0 space-y-8 md:py-24 md:px-16 py-10 lg:space-x-24 lg:flex-row max-w-7xl">
         <AuditionDetails/>
         <hr className="w-full lg:hidden border-2 border-red-800 px-10 brightness-125"/>
         <AuditionForm/>
@@ -72,12 +72,12 @@ function AuditionDetails() {
         </ul>
       </div>
       <p className="sm:text-lg md:text-xl">我們收到申請表格後會盡快聯絡您。</p>
-      <div className="flex space-x-2 group">
-        <a href="/contact" className="w-fit opacity-60 hover:opacity-100 sm:text-lg md:text-xl">
+      <div className="flex group">
+        <a href="/contact" className="w-fit  opacity-60 hover:opacity-100 sm:text-lg md:text-xl">
           如果您對試音有任何疑問，歡迎與我們聯絡。
         </a>
         <ArrowRightIcon
-          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-2 brightness-125 group-hover:opacity-100"/>
+          className="w-6 -translate-x-12 opacity-0 transition-all duration-300 group-hover:-translate-x-0 brightness-125 group-hover:opacity-100"/>
       </div>
     </div>
   )
@@ -141,7 +141,7 @@ function AuditionForm() {
   };
 
   return (
-    <div className="flex w-full lg:basis-3/5 flex-col items-center text-white max-w-[35rem] space-y-8">
+    <div className="flex w-full flex-col items-center text-white max-w-[30rem] space-y-8">
       <form className="w-full text-white space-y-4 font-serif font-medium">
         <legend className="text-4xl font-medium">申請表格</legend>
         <div className="flex flex-col">

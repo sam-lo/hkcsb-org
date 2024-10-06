@@ -8,9 +8,9 @@ export default function Footer () {
 
   return (
     <>
-      <div className="flex md:flex-row flex-col md:space-y-0 space-y-10 text-white bg-black px-4 py-8 md:py-16 md:space-x-8 items-center">
+      <div className="flex md:flex-row flex-col md:space-y-0 space-y-10 text-white bg-black px-4 py-8 md:py-16 md:px-16 md:space-x-4 items-center">
         <a href="/">
-          <Image src={logo} alt={"Carpe Symphonic Band"} className="h-24 w-fit brightness-125"/>
+          <Image src={logo} alt={"Carpe Symphonic Band"} className="h-20 w-fit brightness-125"/>
         </a>
         <div className="flex flex-col">
           <div className="flex md:space-x-4 md:space-y-0 space-y-4 flex-col md:flex-row">
