@@ -40,12 +40,12 @@ export default function Contact() {
     <>
       <div className="flex flex-col items-center">
         <div
-          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[27rem]">
+          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[27rem] md:h-[22rem]">
           <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
           <Image src={envelope} alt="Concert Hall"
                  className="h-full select-none object-cover brightness-[0.5] grayscale"/>
           <div
-            className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+            className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 md:px-16 lg:w-[50rem] lg:inset-y-20">
             <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
             <div className="flex flex-col text-white space-y-2 md:space-y-4">
               <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
@@ -57,7 +57,7 @@ export default function Contact() {
             </div>
             <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
             <a href="/concert"
-               className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
+               className="mt-7 hidden md:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
               <p className="text-xl text-white font-light group-hover:text-red-950">
                 即將舉行的音樂會
               </p>
@@ -81,7 +81,7 @@ export default function Contact() {
               <a key={method.id} href={method.href} className="flex items-center transition-all duration-300 group hover:brightness-125 md:space-x-4">
                 <method.icon className="w-7 text-gold md:w-10"/>
                 <div className="flex items-center divide-x group-hover:opacity-70 divide-white">
-                  <p className="lg:w-52 w-40 px-4">{method.text}</p>
+                  <p className="md:w-52 w-40 px-4">{method.text}</p>
                   <p className="px-4">{method.decription}</p>
                 </div>
               </a>

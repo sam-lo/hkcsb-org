@@ -13,7 +13,7 @@ export default function Concert() {
         <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
         <Image src={stand} alt="Concert Hall"
                className="h-full select-none object-cover grayscale-[0.6] brightness-[0.4]"/>
-        <div className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-24">
+        <div className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 md:px-16 lg:w-[50rem] lg:inset-y-24">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-slate-50 space-y-2 lg:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold lg:text-5xl">

@@ -21,7 +21,7 @@ export default function Header() {
               </a>
             ))}
           </div>
-          <div className="flex lg:hidden items-center justify-end py-5 sm:px-16 px-6">
+          <div className="flex lg:hidden items-center justify-end py-5 md:px-16 px-6">
             <Popover className="">
               <PopoverButton className="active:opacity-100 focus:outline-none opacity-80">
                 <Bars3Icon className="text-white w-8" aria-hidden={true}/>

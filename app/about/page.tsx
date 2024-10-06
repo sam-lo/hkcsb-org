@@ -9,24 +9,24 @@ export default function About() {
   return (
     <div className="flex flex-col items-center">
       <div
-        className="relative w-full overflow-hidden overflow-x-hidden selection:bg-slate-700/50 h-[15rem] lg:h-[27rem]">
+        className="relative w-full overflow-hidden overflow-x-hidden selection:bg-slate-700/50 h-[15rem] md:h-[22rem] lg:h-[27rem]">
         <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
         <Image src={conducting} alt="Concert Hall"
                className="h-full select-none overflow-y-visible object-cover brightness-[0.4] grayscale-[0.6] w-full lg:translate-y-60"/>
         <div
-          className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+          className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 md:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-white space-y-2 md:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
               關於樂團
             </p>
-            <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
+            <p className="w-fit opacity-80 text-lg md:text-2xl">
               了解樂團的資訊
             </p>
           </div>
           <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
+             className="mt-7 hidden md:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
             <p className="text-xl text-white font-light group-hover:text-red-950">
               即將舉行的音樂會
             </p>
@@ -46,7 +46,7 @@ export default function About() {
 function AboutCarpe() {
   return (
     <div
-      className=" flex flex-col space-y-10 lg:space-y-0 text-white items-center justify-around px-6 lg:flex-row-reverse lg:px-16 max-w-[90rem]">
+      className=" flex flex-col space-y-10 lg:space-y-0 text-white items-center justify-around px-6 lg:flex-row-reverse md:px-16 max-w-[90rem]">
       <Image src={logocarpe} alt="practice" className="h-fit brightness-[0.8] rounded-lg lg:w-2/5"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>
@@ -74,7 +74,7 @@ function AboutCarpe() {
 
 function AboutConductor() {
   return (
-    <div className="flex flex-col space-y-10 lg:space-y-0 text-white items-center justify-around px-6 lg:flex-row lg:px-16 max-w-[90rem]">
+    <div className="flex flex-col space-y-10 lg:space-y-0 text-white items-center justify-around px-6 lg:flex-row md:px-16 max-w-[90rem]">
       <Image src={conductor} alt="Conductor" className="h-fit rounded-lg lg:w-1/3"/>
       <div className="flex h-fit flex-col lg:w-1/2">
         <hr className="mb-5 w-full border-4 border-red-800 px-10 brightness-125"/>

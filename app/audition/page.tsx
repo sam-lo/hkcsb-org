@@ -10,23 +10,23 @@ export default function Audition() {
   return (
     <div className="flex flex-col items-center w-full">
       <div
-        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[27rem]">
+        className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[15rem] lg:h-[27rem] md:h-[22rem]">
         <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
         <Image src={scorewithconduct} alt="Concert Hall" className="h-full select-none object-cover brightness-50"/>
         <div
-          className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 sm:px-16 lg:w-[50rem] lg:inset-y-20">
+          className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 py-12 md:px-16 lg:w-[50rem] lg:inset-y-20">
           <hr className="my-5 w-full border-4 border-red-800 px-10 brightness-125"/>
           <div className="flex flex-col text-white space-y-2 md:space-y-4">
             <p className="w-fit font-serif text-4xl font-bold md:text-5xl">
               加入樂團
             </p>
-            <p className="w-fit opacity-80 sm:text-lg md:text-2xl">
+            <p className="w-fit opacity-80 text-lg md:text-2xl">
               成為我們的一員
             </p>
           </div>
           <hr className="mt-5 w-full border-2 border-red-800 px-10 brightness-125"/>
           <a href="/concert"
-             className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
+             className="mt-7 hidden md:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-2xl outline px-4 py-3 transition-all duration-300 group hover:bg-white lg:flex">
             <p className="text-xl text-white font-light group-hover:text-red-950">
               即將舉行的音樂會
             </p>
@@ -36,7 +36,7 @@ export default function Audition() {
         </div>
       </div>
       <div
-        className="flex flex-col w-full items-center px-4 sm:space-y-12 space-y-8 md:py-24 py-10 lg:space-x-28 sm:px-16 lg:flex-row max-w-7xl">
+        className="flex flex-col w-full justify-center items-center px-4 space-y-8 md:py-24 py-10 md:px-16 lg:space-x-28 lg:flex-row max-w-7xl">
         <AuditionDetails/>
         <hr className="w-full lg:hidden border-2 border-red-800 px-10 brightness-125"/>
         <AuditionForm/>
@@ -47,7 +47,7 @@ export default function Audition() {
 
 function AuditionDetails() {
   return (
-    <div className="flex flex-col text-white space-y-6">
+    <div className="flex flex-col text-white max-w-[35rem] space-y-6">
       <p className="text-4xl font-serif font-medium md:text-5xl">
         歡迎參加試音
       </p>
@@ -141,7 +141,7 @@ function AuditionForm() {
   };
 
   return (
-    <div className="flex w-full flex-col items-center text-white max-w-[35rem] space-y-8">
+    <div className="flex w-full lg:basis-3/5 flex-col items-center text-white max-w-[35rem] space-y-8">
       <form className="w-full text-white space-y-4 font-serif font-medium">
         <legend className="text-4xl font-medium">申請表格</legend>
         <div className="flex flex-col">

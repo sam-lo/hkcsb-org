@@ -12,12 +12,12 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center">
         <div
-          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[36rem] lg:h-[47rem]">
+          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[36rem] md:h-[47rem]">
           <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
           <Image src={wall} alt="Concert Hall"
                  className="h-full select-none object-cover brightness-[0.4] grayscale-[0.5] lg:translate-y-10"/>
           <div
-            className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 md:py-24 py-12 sm:px-16 lg:w-[56rem] lg:inset-y-20">
+            className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 md:py-24 py-12 md:px-16 lg:w-[56rem] lg:inset-y-20">
             <hr className="my-5 w-full border-4 border-accentred px-10"/>
             <div className="flex flex-col text-white sm:space-y-2 md:space-y-4">
               <p className="w-fit sm:font-normal text-[28px] font-cinzel sm:text-4xl lg:text-6xl brightness-125">
@@ -37,7 +37,7 @@ export default function Home() {
               </p>
             </div>
             <a href="/concert"
-               className="mt-7 hidden sm:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-xl outline px-6 py-4 transition-all duration-300 group hover:bg-white lg:flex">
+               className="mt-7 hidden md:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-xl outline px-6 py-4 transition-all duration-300 group hover:bg-white">
               <p className="text-2xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         {/* Menu Items */}
-        <div className="grid gap-4 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 sm:py-16 py-8 sm:px-16">
+        <div className="grid gap-4 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 md:py-16 py-8 md:px-16">
           {filteredItems.map((item) => (
             <a href={item.href} key={item.id}
                className="w-full p-5 shadow-lg shadow-white/10 hover:-translate-y-1.5 bg-neutral-950 rounded-lg border-2 border-gold/30 relative overflow-hidden group transition-all duration-500">
