@@ -1,4 +1,4 @@
-# Project Name
+# Website development for Carpe Symphonic Band
 
 ## Description
 This project is a web application built using React, TypeScript, and Tailwind CSS. It leverages various Google Fonts and custom fonts to enhance the visual appeal. The project is configured with Tailwind CSS for styling and includes a global CSS file for additional custom styles.
@@ -14,8 +14,8 @@ This project is a web application built using React, TypeScript, and Tailwind CS
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/sam-lo/hkcsb-org.git
+    cd hkcsb-org
     ```
 
 2. **Install dependencies:**
@@ -25,12 +25,12 @@ This project is a web application built using React, TypeScript, and Tailwind CS
 
 3. **Start the development server:**
     ```sh
-    npm start
+    npm run dev
     ```
 
 ## Project Structure
-- `src/`: Contains the source code of the application.
-- `public/`: Contains public assets and the HTML template.
+- `app/`: Contains the source code of the application.
+- `public/`: Contains public assets 
 - `tailwind.config.js`: Tailwind CSS configuration file.
 - `app/globals.css`: Global CSS file with custom styles and font imports.
 
