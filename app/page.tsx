@@ -3,6 +3,7 @@ import wall from "@/public/photo/wall.png";
 import Image from "next/image";
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
 import {menusItems} from "@/app/data/menuItems";
+import {bandDescription} from "@/app/data/bandDescription";
 
 export default function Home() {
 
@@ -12,13 +13,16 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center">
         <div
-          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[36rem] md:h-[47rem]">
-          <div className="absolute z-10 inset-0 bg-gradient-to-r from-red-950 from-5% to-transparent brightness-50"/>
+          className="relative w-full overflow-hidden overflow-x-auto selection:bg-slate-700/50 h-[36rem] md:h-[43rem]">
+          <div
+            className="absolute z-10 inset-0 bg-gradient-to-r sm:block hidden from-red-950 from-5% to-transparent brightness-50"/>
+          <div
+            className="absolute z-10 inset-0 bg-red-950 block sm:hidden brightness-50"/>
           <Image src={wall} alt="Concert Hall"
                  className="h-full select-none object-cover brightness-[0.4] grayscale-[0.5] lg:translate-y-10"/>
           <div
             className="absolute z-20 inset-0 left-0 flex w-full flex-col px-6 md:py-24 py-12 md:px-16 lg:w-[56rem] lg:inset-y-20">
-            <hr className="my-5 w-full border-4 border-accentred px-10"/>
+            <hr className="mb-5 w-full border-4 border-accentred px-10"/>
             <div className="flex flex-col text-white sm:space-y-2 md:space-y-4">
               <p className="w-fit sm:font-normal text-[28px] font-cinzel sm:text-4xl lg:text-6xl brightness-125">
                 Carpe Symphonic Band
@@ -30,14 +34,14 @@ export default function Home() {
             <hr className="my-5 w-full border-2 border-accentred px-10"/>
             <div className="flex flex-col text-slate-50 opacity-60 space-y-4 text-md sm:text-lg">
               <p>
-                “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分珍惜眼前的每一刻。它的意義不僅僅是享受當下，更強調每一次的合奏，都是獨一無二的。
+                {bandDescription.first}
               </p>
               <p>
-                我們希望聚集一群對音樂造詣有追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每次演出都是寶貴的瞬間，而每一刻練習都會成為台上演出的養份。
+                {bandDescription.second}
               </p>
             </div>
             <a href="/concert"
-               className="mt-7 hidden md:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-xl outline px-6 py-4 transition-all duration-300 group hover:bg-white">
+               className="mt-7 hidden md:flex w-fit space-x-2 select-none items-center outline-white outline-1 rounded-xl outline px-5 py-4 transition-all duration-300 group hover:bg-white">
               <p className="text-2xl text-white group-hover:text-red-950">
                 即將舉行的音樂會
               </p>

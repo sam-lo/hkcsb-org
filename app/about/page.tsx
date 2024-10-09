@@ -4,6 +4,7 @@ import logocarpe from "@/public/LOGO_CARPE_RED.png";
 import conducting from "@/public/photo/conducting.jpg"
 import {ArrowRightIcon} from "@heroicons/react/24/outline";
 import React from "react";
+import {bandDescription} from "@/app/data/bandDescription";
 
 export default function About() {
   return (
@@ -61,10 +62,10 @@ function AboutCarpe() {
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col opacity-70 space-y-4 text-md sm:text-lg">
           <p>
-            “Carpe”一詞源自拉丁文的“Carpe Diem”，直譯為“抓住今天”。這個短語提醒我們要活在當下，充分珍惜眼前的每一刻。它的意義不僅僅是享受當下，更強調每一次的合奏，都是獨一無二的。
+            {bandDescription.first}
           </p>
           <p>
-            我們希望聚集一群對音樂造詣有追求的樂手，特別是那些在學期間因環境限制而未能充分發揮潛力的學生。在這個團體中，我們追求卓越，並珍惜每次演奏的機會，從中獲得成就感和滿足感。這不僅是一次音樂的旅程，更是自我成長和相互激勵的過程。我們相信，每次演出都是寶貴的瞬間，而每一刻練習都會成為台上演出的養份。
+            {bandDescription.second}
           </p>
         </div>
       </div>
@@ -89,8 +90,8 @@ function AboutConductor() {
         <hr className="my-5 w-full border-2 border-red-800 px-10 brightness-125"/>
         <div className="flex flex-col opacity-70 space-y-4 text-md sm:text-lg">
           <p>
-            梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院（Royal
-            Northern College of Music）深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet
+            梁氏畢業自香港浸會大學音樂系，在港時跟隨莊雪華女士學習長笛及短笛。畢業隨後前往英國皇家北方音樂學院 (Royal
+            Northern College of Music) 深造，在深造期間跟隨Mrs. Laura Jellicoe學習長笛及Mrs. Janet
             Richardson學習短笛。在2015年，梁氏於香港國際音樂節西樂合奏小組獲得冠軍。除此之外，梁氏曾在不同大師班作示範生，包括：Marc
             Grauwels， Susan Milan， Adam Walker 及 Jennifer Hutchinson 等等。 畢業回港後，梁氏活躍於不同團體及機構合作，包括大館，TwoSet
             Violin，歌手陳柏宇及搖滾組合Rubberband等。
